@@ -370,5 +370,17 @@
     })();
 </script>
 
+<script type="text/javascript">
+    if (location.protocol !== "https:"){
+        // disabled locally
+        // location.replace(window.location.href.replace("http:", "https:"));
+    }
+
+    if(location.host.match(/www/)) {
+        // if url contains www redirect user to non-www url
+        location.replace(window.location.href.replace("www.", ""));
+    }
+</script>
+
 </body>
 </html>
