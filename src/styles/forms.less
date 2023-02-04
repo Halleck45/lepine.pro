@@ -1,0 +1,18 @@
+.btn {
+@apply text-white px-8 py-4 rounded-lg no-underline transition duration-200 hover:scale-105;
+  background-color: @primary;
+  &:hover {
+  @apply bg-green-600;
+  }
+  &.primary {
+  @apply font-bold;
+  }
+
+  &.secondary {
+  @apply bg-white text-gray-800;
+    &:hover {
+    @apply bg-gray-100;
+    }
+  }
+
+}
