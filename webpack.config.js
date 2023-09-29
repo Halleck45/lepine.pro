@@ -62,5 +62,8 @@ module.exports = {
     },
     compress: true,
     port: 8888,
+
+    // disable ssl
+    https: false,
   },
 };
