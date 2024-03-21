@@ -79,27 +79,4 @@ module.exports = {
     // disable ssl
     https: false,
   },
-  optimization: {
-      minimizer: [
-        "...",
-        new ImageMinimizerPlugin({
-          minimizer: {
-            implementation: ImageMinimizerPlugin.sharpMinify,
-          },
-          generator: [
-            {
-              type: "asset",
-              implementation: ImageMinimizerPlugin.sharpGenerate,
-              options: {
-                encodeOptions: {
-                  webp: {
-                    quality: 90,
-                  },
-                },
-              },
-            },
-          ],
-        }),
-      ],
-  },
 };
