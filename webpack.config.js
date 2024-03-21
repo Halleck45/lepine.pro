@@ -3,6 +3,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
+const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+
 
 let devMode = false;
 if (typeof (process.env.NODE_ENV) != 'undefined') {
@@ -35,11 +38,28 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: "asset",
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html'
+    }),
+    new HTMLInlineCSSWebpackPlugin({
+      // ignore not in src folder
+      filter(fileName) {
+        return fileName.includes("src");
+      },
+    }),
+    new CompressionPlugin({
+      test: /\.js(\?.*)?$/i,
+      algorithm: "gzip",
+      compressionOptions: {
+        level: 9
+      }
     }),
     new CopyPlugin({
       patterns: [
@@ -48,13 +68,6 @@ module.exports = {
         {context: 'src/pdf', from: "*", to: "pdf"},
       ]
     }),
-    new CompressionPlugin({
-      test: /\.js(\?.*)?$/i,
-      algorithm: "gzip",
-      compressionOptions: {
-        level: 9
-      }
-    })
   ].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
   devServer: {
     static: {
@@ -65,5 +78,28 @@ module.exports = {
 
     // disable ssl
     https: false,
+  },
+  optimization: {
+      minimizer: [
+        "...",
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.sharpMinify,
+          },
+          generator: [
+            {
+              type: "asset",
+              implementation: ImageMinimizerPlugin.sharpGenerate,
+              options: {
+                encodeOptions: {
+                  webp: {
+                    quality: 90,
+                  },
+                },
+              },
+            },
+          ],
+        }),
+      ],
   },
 };
