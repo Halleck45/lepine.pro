@@ -1,6 +1,11 @@
 .btn {
-@apply text-white px-8 py-4 rounded-lg no-underline transition duration-200 hover:scale-105;
+@apply inline-block text-white px-8 py-4 rounded-lg no-underline transition duration-200 hover:scale-105 text-center;
   background-color: @primary;
+
+  img {
+    @apply inline-block w-auto mx-auto border-2 border-black;
+  }
+
   &:hover {
   @apply bg-green-600;
   }
