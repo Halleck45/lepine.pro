@@ -1,718 +1,934 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Jean-François Lépine - Consultant PHP et Qualité</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon//apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon//favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon//safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>Jean-François Lépine</title>
-    <meta name="title" content="Jean-François Lépine">
-    <meta name="description"
-          content="Principal Engineer and CTO. I design reliable, scalable software systems, improve developer productivity, and lead data-driven engineering at scale. PHP expert">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lepine.pro">
-    <meta property="og:title" content="Jean-François Lépine">
-    <meta property="og:description"
-          content="Reliable, scalable systems. Developer productivity. OSS maintainer and conference speaker.">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://lepine.pro">
-    <meta property="twitter:title" content="Jean-François Lépine">
-    <meta property="twitter:description"
-          content="Reliable, scalable systems. Developer productivity. OSS maintainer and conference speaker.">
-    <script defer="defer" src="main.js?t=1756534659346"></script>
-
-    <!-- UI -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* minimal extras for subtle polish */
-        .glass {
-            background: rgba(255, 255, 255, .7);
-            backdrop-filter: blur(8px);
-        }
-
-        .card {
-            border: 1px solid rgba(0, 0, 0, .06);
-        }
-
-        .chip {
-            border: 1px solid rgba(0, 0, 0, .08);
-        }
-
-        .focus-ring:focus {
-            outline: 2px solid #6366f1;
-            outline-offset: 2px;
-        }
-
-        .animate-in {
-            animation: fadeIn .5s ease both;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px)
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-    </style>
-</head>
-
-
-<body class="antialiased text-slate-800 bg-slate-50 selection:bg-indigo-200/60">
-<!-- Header -->
-<header class="sticky top-0 z-40 bg-white/80 glass border-b border-slate-200">
-    <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-        <a href="#top" class="font-semibold tracking-tight text-slate-900">Jean-François Lépine</a>
-        <ul class="flex gap-5 text-sm">
-            <li><a href="#expertise" class="hover:text-indigo-600">Expertise</a></li>
-            <li><a href="#talks" class="hover:text-indigo-600">Publications & Conferences</a></li>
-            <li><a href="#oss" class="hover:text-indigo-600">Open Source</a></li>
-            <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- Hero -->
-
-<main class="hero max-w-7xl mx-auto px-4">
-    <div class="content">
-        <div class="py-16 w-full md:flex-1 px-16 text-center md:text-left">
-            <h1 class="text-6xl font-bold text-gray-800">Jean-François <strong class="text-green-500">Lépine</strong>
-            </h1>
-            <p class="mt-12 text-slate-600 text-lg">
-                I help teams design resilient systems, shorten lead time, and ship with confidence.
-                I combine hands-on architecture with pragmatic DevOps and a metrics-driven culture.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-8 mt-8">
-                <!-- CV -->
-                <a href="pdf/cv-jflepine-2025.pdf" target="_blank"
-                   class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500 text-white font-medium shadow hover:bg-green-600 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                         stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"/>
-                    </svg>
-                    CV
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/Halleck45" target="_blank"
-                   class="inline-flex items-center gap-2 text-slate-700 hover:text-indigo-600 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.088 3.292 9.387 7.864 10.918.574.105.786-.25.786-.557 0-.274-.01-1.003-.015-1.97-3.197.696-3.872-1.54-3.872-1.54-.522-1.326-1.276-1.68-1.276-1.68-1.042-.712.079-.698.079-.698 1.15.081 1.754 1.18 1.754 1.18 1.024 1.753 2.688 1.246 3.343.953.104-.742.401-1.246.729-1.532-2.552-.29-5.236-1.276-5.236-5.678 0-1.255.448-2.28 1.182-3.083-.118-.29-.512-1.46.112-3.046 0 0 .964-.308 3.16 1.176a11.03 11.03 0 0 1 2.878-.387c.976.004 1.962.132 2.878.387 2.196-1.484 3.16-1.176 3.16-1.176.624 1.586.23 2.756.112 3.046.735.803 1.182 1.828 1.182 3.083 0 4.412-2.688 5.385-5.254 5.668.413.355.78 1.056.78 2.13 0 1.54-.014 2.78-.014 3.157 0 .31.208.67.792.555C20.708 21.387 24 17.088 24 12 24 5.648 18.852.5 12 .5z"/>
-                    </svg>
-                    Github
-                </a>
-
-                <!-- Blog -->
-                <a href="http://blog.lepine.pro" target="_blank"
-                   class="inline-flex items-center gap-2 text-slate-700 hover:text-indigo-600 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4 4h16v16H4z" fill="none"/>
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                    Blog
-                </a>
-
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/" target="_blank"
-                   class="inline-flex items-center gap-2 text-slate-700 hover:text-indigo-600 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.718V12.87h3.718v1.686s1.118-2.069,3.775-2.069,4.556,1.621,4.556,4.975v7.926Z"
-                              fill-rule="evenodd"></path>
-                    </svg>
-                    LinkedIn
-                </a>
-            </div>
-
-        </div>
-        <div class="hero-image"><img style="--sal-duration: 2s" data-sal="zoom-in" class="robot"
-                                     src="images/avatar-bg.png" alt="Jean-François Lépine"></div>
-    </div>
-</main>
-
-<main id="top" class="mx-auto max-w-6xl px-4">
-    <section class="pt-12 pb-8">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-700">
-            Principal Engineer & CTO focused on reliability, scale, and developer productivity
-        </h2>
-        <div class="mt-6 flex flex-wrap gap-3 text-xs">
-            <span class="chip px-3 py-1 rounded-full  bg-white">Systems design</span>
-            <span class="chip px-3 py-1 rounded-full bg-white">SRE & Reliability</span>
-            <span class="chip px-3 py-1 rounded-full bg-white">Platform & DX</span>
-            <span class="chip px-3 py-1 rounded-full bg-white">Data & Observability</span>
-            <span class="chip px-3 py-1 rounded-full bg-white">Go • PHP • JavaScript • Bash</span>
-            <span class="chip px-3 py-1 rounded-full bg-white">AWS • Unix</span>
-        </div>
-    </section>
-
-    <!-- My Expertise  -->
-    <section id="expertise" aria-labelledby="expertise-title" class="mt-8  pb-4">
-        <h2 id="expertise-title" class="text-2xl font-bold">My expertise</h2>
-        <p class="mt-2 text-slate-600 max-w-3xl">
-            High-leverage work areas aligned with Big Tech expectations. Evidence-based, measurable outcomes.
-        </p>
-
-        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <!-- Architecture & Scale -->
-            <article class="card rounded-xl bg-white p-5 animate-in" itemscope
-                     itemtype="https://schema.org/DefinedTerm">
-                <meta itemprop="termCode" content="architecture-scale">
-                <h3 class="font-semibold text-lg" itemprop="name">Architecture for <span
-                        class="font-bold text-green-500">Scale</span></h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Design <span class="font-bold text-green-500">modular</span>, evolvable systems: hexagonal
-                    boundaries, contracts, and safe migrations.
-                    Plan capacity, <span class="font-bold text-green-500">SLIs/SLOs</span>, sharding, queues,
-                    backpressure, idempotency.
-                </p>
-                <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
-                    <li>Reduced <span class="font-bold text-green-500">p99 latency</span> with caching tiers and async
-                        pipelines
-                    </li>
-                    <li>Cut <span class="font-bold text-green-500">infra spend</span> via workload-aware autoscaling and
-                        storage choices
-                    </li>
-                </ul>
-            </article>
-
-            <!-- Reliability & SRE -->
-            <article class="card rounded-xl bg-white p-5 animate-in" itemscope
-                     itemtype="https://schema.org/DefinedTerm">
-                <meta itemprop="termCode" content="sre-reliability">
-                <h3 class="font-semibold text-lg" itemprop="name">Reliability & <span class="font-bold text-green-500">SRE</span>
-                </h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    <span class="font-bold text-green-500">SLOs</span>, <span class="font-bold text-green-500">error budgets</span>,
-                    incident response, and postmortems that improve recovery and prevent repeats.
-                    Defense in depth across CI/CD, rollout, and runtime.
-                </p>
-                <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
-                    <li><span class="font-bold text-green-500">Blue/green</span>, canary, and feature flags with fast
-                        rollback
-                    </li>
-                    <li><span class="font-bold text-green-500">Runbooks</span>, chaos drills, and DR tested regularly
-                    </li>
-                </ul>
-            </article>
-
-            <!-- Data & Observability -->
-            <article class="card rounded-xl bg-white p-5 animate-in" itemscope
-                     itemtype="https://schema.org/DefinedTerm">
-                <meta itemprop="termCode" content="data-observability">
-                <h3 class="font-semibold text-lg" itemprop="name">Data & <span class="font-bold text-green-500">Observability</span>
-                </h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Metrics, logs, traces, and <span class="font-bold text-green-500">event streams</span> for product
-                    and platform telemetry.
-                    <span class="font-bold text-green-500">ClickHouse</span>, OpenTelemetry.
-                </p>
-                <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
-                    <li><span class="font-bold text-green-500">Actionable dashboards</span> tied to SLOs and business
-                        KPIs
-                    </li>
-                    <li><span class="font-bold text-green-500">Tracing</span> driven performance and cost optimization
-                    </li>
-                </ul>
-            </article>
-
-            <!-- Developer Productivity / Platform -->
-            <article class="card rounded-xl bg-white p-5 animate-in" itemscope
-                     itemtype="https://schema.org/DefinedTerm">
-                <meta itemprop="termCode" content="developer-experience">
-                <h3 class="font-semibold text-lg" itemprop="name">Platform & <span class="font-bold text-green-500">Developer Experience</span>
-                </h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Internal platforms that reduce cognitive load: <span
-                        class="font-bold text-green-500">golden paths</span>, paved roads, templates, and guardrails.
-                </p>
-                <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
-                    <li><span class="font-bold text-green-500">Minutes-to-prod</span> CI/CD with policy-as-code</li>
-                    <li>Automated <span class="font-bold text-green-500">quality gates</span> and architecture fitness
-                        functions
-                    </li>
-                </ul>
-            </article>
-
-            <!-- Application Security -->
-            <article class="card rounded-xl bg-white p-5 animate-in" itemscope
-                     itemtype="https://schema.org/DefinedTerm">
-                <meta itemprop="termCode" content="appsec">
-                <h3 class="font-semibold text-lg" itemprop="name">Application <span class="font-bold text-green-500">Security</span>
-                </h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    <span class="font-bold text-green-500">Threat modeling</span>, supply-chain trust, secrets hygiene,
-                    and least privilege by default.
-                </p>
-                <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
-                    <li>SLSA-style provenance, dependency health</li>
-                    <li><span class="font-bold text-green-500">Runtime policies</span> and anomaly detection</li>
-                </ul>
-            </article>
-
-            <!-- Leadership & Coaching -->
-            <article class="card rounded-xl bg-white p-5 animate-in" itemscope
-                     itemtype="https://schema.org/DefinedTerm">
-                <meta itemprop="termCode" content="leadership">
-                <h3 class="font-semibold text-lg" itemprop="name">Leadership & <span class="font-bold text-green-500">Coaching</span>
-                </h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Clear <span class="font-bold text-green-500">ownership</span>, pragmatic rituals, and growth paths.
-                    I align technical strategy with measurable outcomes.
-                </p>
-                <ul class="mt-3 text-sm list-disc pl-5 text-slate-700">
-                    <li><span class="font-bold text-green-500">Hiring rubrics</span> and bar-raising interviews</li>
-                    <li><span class="font-bold text-green-500">Design reviews</span> and RCA culture that sticks</li>
-                </ul>
-            </article>
-        </div>
-    </section>
-
-
-    <!-- Open Source -->
-    <section id="oss" class="mt-14 md:mt-24 pb-2">
-        <h2 class="text-2xl font-bold">Open Source Highlights</h2>
-        <p class="mt-2 text-slate-600 max-w-3xl">
-            I actively contribute to open source. My projects are used by thousands of developers, from individual
-            contributors to large engineering teams.
-        </p>
-
-        <ul class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <!-- PhpMetrics -->
-            <li class="card rounded-xl bg-white p-6 hover:shadow-lg transition-shadow">
-                <h3 class="font-semibold text-lg">PhpMetrics <span class="text-green-500 font-bold">★ 2.6k+</span></h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Static analysis for <span class="font-bold text-green-500">PHP</span> with actionable dashboards.
-                    Adopted by many companies to track maintainability and code quality.
-                </p>
-                <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 hover:underline font-medium"
-                   href="https://github.com/phpmetrics/PhpMetrics" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 3l7 7-7 7v-4H3v-6h11V3z"/>
-                    </svg>
-                </a>
-            </li>
-
-            <!-- AST Metrics -->
-            <li class="card rounded-xl bg-white p-6 hover:shadow-lg transition-shadow">
-                <h3 class="font-semibold text-lg">AST Metrics</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Multi-language static <span class="font-bold text-green-500">AST analyzers</span> (PHP, Go, Rust,
-                    Python).
-                    Produces modern HTML reports for teams and tech leads.
-                </p>
-                <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 hover:underline font-medium"
-                   href="https://github.com/Halleck45/ast-metrics" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 3l7 7-7 7v-4H3v-6h11V3z"/>
-                    </svg>
-                </a>
-            </li>
-
-            <!-- MutaTesting -->
-            <li class="card rounded-xl bg-white p-6 hover:shadow-lg transition-shadow">
-                <h3 class="font-semibold text-lg">MutaTesting</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    <span class="font-bold text-green-500">Mutation testing</span> for PHP. Ensures your tests really
-                    catch regressions
-                    by introducing controlled changes in the codebase.
-                </p>
-                <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 hover:underline font-medium"
-                   href="https://github.com/Halleck45/MutaTesting" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 3l7 7-7 7v-4H3v-6h11V3z"/>
-                    </svg>
-                </a>
-            </li>
-
-            <!-- go-php-parser -->
-            <li class="card rounded-xl bg-white p-6 hover:shadow-lg transition-shadow">
-                <h3 class="font-semibold text-lg">go-php-parser</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Parse PHP <span class="font-bold text-green-500">ASTs</span> directly in Go.
-                    Used as a foundation for static analysis and compiler-like tooling.
-                </p>
-                <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 hover:underline font-medium"
-                   href="https://github.com/Halleck45/go-php-parser" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 3l7 7-7 7v-4H3v-6h11V3z"/>
-                    </svg>
-                </a>
-            </li>
-
-            <!-- captain-dys -->
-            <li class="card rounded-xl bg-white p-6 hover:shadow-lg transition-shadow">
-                <h3 class="font-semibold text-lg">captain-dys</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    Inclusive <span class="font-bold text-green-500">text editor</span> for children with dyslexia.
-                    Improves readability and learning experience.
-                </p>
-                <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 hover:underline font-medium"
-                   href="https://github.com/Halleck45/captain-dys" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 3l7 7-7 7v-4H3v-6h11V3z"/>
-                    </svg>
-                </a>
-            </li>
-
-            <!-- OpenPronounce -->
-            <li class="card rounded-xl bg-white p-6 hover:shadow-lg transition-shadow">
-                <h3 class="font-semibold text-lg">OpenPronounce</h3>
-                <p class="mt-2 text-sm text-slate-600">
-                    AI-powered toolkit for <span
-                        class="font-bold text-green-500">real-time pronunciation feedback</span>.
-                    Helps English learners improve with viseme alignment and audio analysis.
-                </p>
-                <a class="mt-3 inline-flex items-center gap-2 text-indigo-600 hover:underline font-medium"
-                   href="https://github.com/Halleck45/OpenPronounce" target="_blank" rel="noopener">
-                    View on GitHub
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 3l7 7-7 7v-4H3v-6h11V3z"/>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </section>
-
-
-    <section id="talks" class="mt-14 md:mt-24 pb-2">
-        <div class="content">
-            <div class="illustrations-text">
-                <h2 class="text-2xl font-bold" id="talks">
-                    Main <strong>publications</strong> and conferences
-                </h2>
-
-
-                <p class="mb-4 text-slate-600">
-                    I regularly give talks at international conferences and contribute books and podcasts on software
-                    engineering.
-                    Below is a complete list of my key contributions.
-                </p>
-
-                <div class="overflow-x-auto rounded-lg border border-slate-200 shadow-sm">
-                    <table class="min-w-full table-auto text-sm bg-white">
-                        <thead class="bg-slate-100 text-slate-700 font-semibold">
-                        <tr>
-                            <th class="px-4 py-2 text-left">Date</th>
-                            <th class="px-4 py-2 text-left">Event</th>
-                            <th class="px-4 py-2 text-left">Talk / Publication</th>
-                            <th class="px-4 py-2 text-left">Links</th>
-                        </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200">
-                        <tr>
-                            <td class="px-4 py-2">Feb 2025</td>
-                            <td class="px-4 py-2">📽️ AFUP</td>
-                            <td class="px-4 py-2">Massive survey on the PHP ecosystem</td>
-                            <td class="px-4 py-2">—</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Sep 2023</td>
-                            <td class="px-4 py-2">📔 Eyrolles</td>
-                            <td class="px-4 py-2">Software Quality for Backend Developers</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://www.amazon.fr/Qualit%C3%A9-logicielle-pour-d%C3%A9veloppeurs-back-end/dp/2416012673/"
-                                    class="text-indigo-600 hover:underline">Buy</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Aug 2023</td>
-                            <td class="px-4 py-2">🎙️ Podcast</td>
-                            <td class="px-4 py-2">Improving collaboration between testers and developers</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://podcasts-francais.fr/podcast/qalisty/-29-ameliorer-la-collaboration-entre-testeurs-et-d"
-                                    class="text-indigo-600 hover:underline">Listen</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Jun 2023</td>
-                            <td class="px-4 py-2">📽️ Station F</td>
-                            <td class="px-4 py-2">Artificial Intelligence: Opportunities and Threats</td>
-                            <td class="px-4 py-2"><a href="https://www.youtube.com/watch?v=Issu2qSQxkA"
-                                                     class="text-indigo-600 hover:underline">Video</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">May 2022</td>
-                            <td class="px-4 py-2">📽️ Forum PHP</td>
-                            <td class="px-4 py-2">What a full production crash taught us</td>
-                            <td class="px-4 py-2"><a href="https://www.youtube.com/watch?v=IY3S4l81aB4"
-                                                     class="text-indigo-600 hover:underline">Video</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">May 2021</td>
-                            <td class="px-4 py-2">📽️ AFUP Days</td>
-                            <td class="px-4 py-2">From legacy to modern stacks (and back)</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://joind.in/event/forum-php-2017/faut-il-faire-du-travail-de-qualit-"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Nov 2017</td>
-                            <td class="px-4 py-2">📽️ Forum PHP</td>
-                            <td class="px-4 py-2">Should we always strive for software quality?</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://joind.in/event/forum-php-2017/faut-il-faire-du-travail-de-qualit-"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">May 2017</td>
-                            <td class="px-4 py-2">📽️ PHP Tour</td>
-                            <td class="px-4 py-2">Static analysis? I know it… but I don’t get it!</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://joind.in/event/php-tour-2017-nantes-/lanalyse-statique--oui-oui-je-connais-mais-jy-comprends-rien-"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Nov 2014</td>
-                            <td class="px-4 py-2">📽️ Blend Web Mix</td>
-                            <td class="px-4 py-2">Designing domain-driven architectures</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/concevoir-une-architecture-pilotee-par-le-metier"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Jul 2014</td>
-                            <td class="px-4 py-2">📽️ RMLL</td>
-                            <td class="px-4 py-2">Testing a web application: tools and practices</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/outils-et-pratiques-tester-une-application-web-moderne"
-                                    class="text-indigo-600 hover:underline">Slides</a>, <a
-                                    href="http://video.rmll.info/videos/tester-une-application-web-quels-outils-et-quelles-pratiques/"
-                                    class="text-indigo-600 hover:underline">Video</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">May 2014</td>
-                            <td class="px-4 py-2">📽️ Solution Linux</td>
-                            <td class="px-4 py-2">Panel: Evolution of best practices in web development</td>
-                            <td class="px-4 py-2">—</td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Mar 2014</td>
-                            <td class="px-4 py-2">📽️ Radio France / AFUP</td>
-                            <td class="px-4 py-2">Experience report: when business needs drive architecture</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/quand-le-besoin-metier-pilote-larchitecture-applicative"
-                                    class="text-indigo-600 hover:underline">Slides</a>, <a
-                                    href="http://www.dailymotion.com/video/x1k91yx_retour-d-experience-quand-le-besoin-metier-pilote-l-architecture-applicative_tech"
-                                    class="text-indigo-600 hover:underline">Video</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Feb 2014</td>
-                            <td class="px-4 py-2">📽️ Meetup Alter Way</td>
-                            <td class="px-4 py-2">Front-end industrialization: introduction</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/industrialisation-front-end-introduction"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Nov 2013</td>
-                            <td class="px-4 py-2">📽️ Meetup Alter Way</td>
-                            <td class="px-4 py-2">Symfony2: a Domain Driven Design oriented framework?</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/symfony2-un-framework-oriente-domain-driven-design"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Oct 2013</td>
-                            <td class="px-4 py-2">📽️ Open World Forum</td>
-                            <td class="px-4 py-2">Developing a functionally complex project</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/developper-un-projet-fonctionnellement-complexe"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Jun 2013</td>
-                            <td class="px-4 py-2">📽️ Meetup Alter Way</td>
-                            <td class="px-4 py-2">Mutation Testing</td>
-                            <td class="px-4 py-2"><a href="https://speakerdeck.com/halleck/le-mutation-testing"
-                                                     class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">May 2013</td>
-                            <td class="px-4 py-2">📽️ Solution Linux</td>
-                            <td class="px-4 py-2">Introduction to Behavior Driven Development with Behat</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/introduction-au-developpement-pilote-par-le-comportement-avec-behat"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Feb 2013</td>
-                            <td class="px-4 py-2">📽️ AFUP Meetup</td>
-                            <td class="px-4 py-2">Industrializing contracts in PHP</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://speakerdeck.com/halleck/industrialiser-le-contrat-en-php"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Jul 2012</td>
-                            <td class="px-4 py-2">📽️ AFUP Meetup</td>
-                            <td class="px-4 py-2">Exploiting PHP 5</td>
-                            <td class="px-4 py-2"><a href="http://fr.slideshare.net/halleck45/exploiter-php-5"
-                                                     class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Jun 2012</td>
-                            <td class="px-4 py-2">📔 Eyrolles</td>
-                            <td class="px-4 py-2">Industrializing PHP 5: tools and best practices</td>
-                            <td class="px-4 py-2"><a
-                                    href="https://www.eyrolles.com/Informatique/Livre/industrialisation-php-5-outils-et-bonnes-pratiques-9782212134803/"
-                                    class="text-indigo-600 hover:underline">Book</a></td>
-                        </tr>
-                        <tr>
-                            <td class="px-4 py-2">Feb 2012</td>
-                            <td class="px-4 py-2">📽️ AFUP Meetup</td>
-                            <td class="px-4 py-2">OOP and Traits in PHP 5.4</td>
-                            <td class="px-4 py-2"><a
-                                    href="http://fr.slideshare.net/halleck45/programmation-oriente-objet-et-les-traits-en-php-54"
-                                    class="text-indigo-600 hover:underline">Slides</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="mt-14 md:mt-24 pb-24 mb-24">
-        <div class="flex max-w-4xl mx-auto items-center justify-end gap-16">
-            <div class="">
-                <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/" target="_blank"
-                   class="fill-blue-500 underline inline-flex items-center gap-2  hover:text-indigo-600 transition-colors">
-                    <svg class="size-24" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-                </a>
-            </div>
-            <div>
-                <h2 class="text-4xl font-bold text-gray-800">Contact me</h2>
-                <p class="mt-2 text-slate-600 text-xl">
-                    I'm always open to new opportunities and collaborations.
-                    <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/" target="_blank"
-                       class="text-green-500 fill-green-500 underline inline-flex items-center gap-2  hover:text-indigo-600 transition-colors">
-                        Contact me on LinkedIn
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-
-
-<!-- Structured Data -->
-<script type="application/ld+json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jean-François Lépine - Consultant Expert Industrialisation, Tests et Qualité</title>
+  <meta name="description" content="Consultant expert disponible pour audit de code, industrialisation, tests automatisés et qualité logicielle. CTO, auteur chez Eyrolles, créateur de PhpMetrics (15M+ téléchargements)." />
+  <meta name="keywords" content="consultant industrialisation logicielle, audit de code, qualité logicielle, tests automatisés, quality gates, coaching technique, CTO as a service, expert PHP, consultant disponible" />
+  <meta name="author" content="Jean-François Lépine" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://lepine.pro/" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jean-François Lépine" />
+  <meta property="og:title" content="Consultant expert en industrialisation, tests et qualité logicielle" />
+  <meta property="og:description" content="Audit, industrialisation, tests et qualité logicielle. Consultant expert disponible pour accompagner vos équipes." />
+  <meta property="og:url" content="https://lepine.pro/" />
+  <meta property="og:image" content="https://lepine.pro/images/jf-lepine.jpg" />
+  <meta property="og:image:alt" content="Jean-François Lépine, consultant en qualité logicielle" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Consultant expert en industrialisation, tests et qualité logicielle" />
+  <meta name="twitter:description" content="Consultant disponible pour audit de code, industrialisation, tests automatisés et qualité logicielle." />
+  <meta name="twitter:image" content="https://lepine.pro/images/jf-lepine.jpg" />
+  <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Jean-François Lépine",
+      "url": "https://lepine.pro/",
+      "description": "Consultant expert en industrialisation logicielle, tests automatisés et qualité logicielle. Disponible pour audit et accompagnement.",
+      "image": "https://lepine.pro/images/jf-lepine.jpg",
+      "serviceType": [
+        "Audit de code",
+        "Industrialisation logicielle",
+        "Tests automatisés",
+        "Qualité logicielle",
+        "Coaching technique"
+      ],
+      "areaServed": "FR",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://lepine.pro/#contact",
+        "availableLanguage": [
+          "fr",
+          "en"
+        ]
+      },
+      "provider": {
         "@type": "Person",
         "name": "Jean-François Lépine",
-        "jobTitle": "Principal Engineer, CTO",
-        "url": "https://lepine.pro/",
-        "image": "https://lepine.pro/og-image.jpg",
+        "jobTitle": "CTO et consultant expert",
         "sameAs": [
-            "https://github.com/Halleck45",
-            "https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/",
-            "http://blog.lepine.pro/"
-        ],
-        "knowsAbout": [
-            "Software architecture",
-            "Site Reliability Engineering",
-            "Developer productivity",
-            "DevOps",
-            "Observability",
-            "Static analysis",
-            "PHP",
-            "Go",
-            "Python",
-            "AWS",
-            "GCP"
-        ],
-        "hasPart": [
-            {
-                "@type": "SoftwareSourceCode",
-                "name": "PhpMetrics",
-                "programmingLanguage": "PHP",
-                "codeRepository": "https://github.com/phpmetrics/PhpMetrics"
-            },
-            {
-                "@type": "SoftwareSourceCode",
-                "name": "AST Metrics",
-                "programmingLanguage": "Go",
-                "codeRepository": "https://github.com/Halleck45/ast-metrics"
-            }
+          "https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/",
+          "https://github.com/Halleck45",
+          "http://blog.lepine.pro"
         ]
+      }
     }
-</script>
-
-<script>var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-5363554-7']);
-_gaq.push(['_trackPageview']);
-(function () {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();</script>
-<script>if (location.host.match(/www/)) {
-    // if url contains www redirect user to non-www url
-    location.replace(window.location.href.replace("www.", ""));
-}
-
-if (location.protocol !== "https:") {
-    // redirect user to https
-    // except for localhost
-    if (location.hostname !== "localhost") {
-        location.replace(window.location.href.replace("http:", "https:"));
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500&family=Google+Sans+Display:wght@300;400&display=swap" rel="stylesheet" />
+  <!-- fallback si Google Sans non dispo publiquement -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --white: #ffffff;
+      --off: #f8f8f6;
+      --text: #1a1a1a;
+      --mid: #5f6368;
+      --light: #bdc1c6;
+      --line: #e8e8e6;
+      --accent: #1a73e8;
+      --accent-light: #e8f0fe;
+      --green: #137333;
+      --red: #c5221f;
     }
-}</script>
-</body>
 
-<!-- Talks as structured data (optional) -->
-<script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Book",
-                "name": "Software Quality for Backend Developers",
-                "inLanguage": "fr",
-                "author": {
-                    "@type": "Person",
-                    "name": "Jean-François Lépine"
-                },
-                "publisher": "Eyrolles",
-                "url": "https://www.amazon.fr/Qualit%C3%A9-logicielle-pour-d%C3%A9veloppeurs-back-end/dp/2416012673/",
-                "datePublished": "2023-09-01"
-            },
-            {
-                "@type": "Event",
-                "name": "Artificial Intelligence: Opportunities and Threats",
-                "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-                "startDate": "2023-06-01",
-                "url": "https://www.youtube.com/watch?v=Issu2qSQxkA"
-            },
-            {
-                "@type": "Event",
-                "name": "What a full production crash taught us",
-                "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-                "startDate": "2022-05-01",
-                "url": "https://www.youtube.com/watch?v=IY3S4l81aB4"
-            }
-        ]
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-</script>
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 3rem;
+      height: 64px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-size: 0.92rem; font-weight: 500; letter-spacing: -0.01em;
+      color: var(--text); text-decoration: none;
+    }
+
+    .nav-links { display: flex; list-style: none; gap: 0; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 400; color: var(--mid);
+      text-decoration: none; padding: 0 1rem; height: 64px;
+      display: flex; align-items: center;
+      transition: color 0.15s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      margin-left: 0.5rem;
+      background: var(--accent) !important;
+      color: white !important;
+      padding: 0 1.25rem !important;
+      border-radius: 100px !important;
+      height: 36px !important;
+      font-weight: 500 !important;
+      border-bottom: none !important;
+    }
+
+    .nav-cta:hover { background: #1557b0 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 120px 3rem 4rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem; font-weight: 500; color: var(--accent);
+      letter-spacing: 0.01em; margin-bottom: 2rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      opacity: 0; animation: up 0.5s ease 0.1s forwards;
+    }
+
+    .hero-tag-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      max-width: 900px;
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: up 0.65s ease 0.15s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    .hero-desc {
+      font-size: 1.15rem; font-weight: 300; color: var(--mid);
+      max-width: 560px; line-height: 1.8; margin-bottom: 3rem;
+      opacity: 0; animation: up 0.65s ease 0.3s forwards;
+    }
+
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+      opacity: 0; animation: up 0.65s ease 0.45s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--text); color: white;
+      padding: 0 1.75rem; height: 48px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #2d2d2d; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border: 1px solid var(--line); color: var(--text);
+      padding: 0 1.75rem; height: 48px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 400; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--mid); background: var(--off); }
+
+    /* ── STATS ── */
+    .stats {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 3rem;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 2.5rem 0;
+      border-right: 1px solid var(--line);
+      padding-left: 2rem;
+    }
+
+    .stat:first-child { padding-left: 0; border-left: none; }
+    .stat:last-child { border-right: none; }
+
+    .stat-n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem; font-weight: 400; letter-spacing: -0.04em;
+      line-height: 1; color: var(--text); margin-bottom: 0.35rem;
+    }
+
+    .stat-n sup { font-size: 1.4rem; color: var(--accent); }
+
+    .stat-l { font-size: 0.78rem; color: var(--mid); font-weight: 400; line-height: 1.4; }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 6rem 3rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-full {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-full-inner {
+      max-width: 1200px; margin: 0 auto; padding: 6rem 3rem;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem; font-weight: 500; color: var(--mid);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    h2 em { font-style: italic; color: var(--mid); }
+
+    .section-lead {
+      font-size: 1rem; color: var(--mid); font-weight: 300;
+      max-width: 500px; line-height: 1.8; margin-bottom: 4rem;
+    }
+
+    /* ── MISSIONS ── */
+    .missions-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .m-card {
+      background: var(--white); padding: 2.5rem;
+      transition: background 0.2s;
+      display: flex; flex-direction: column;
+    }
+
+    .m-card:hover { background: var(--off); }
+
+    .m-num {
+      font-size: 0.72rem; color: var(--light);
+      font-weight: 500; margin-bottom: 1.5rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .m-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem; font-weight: 400; letter-spacing: -0.02em;
+      margin-bottom: 0.75rem; line-height: 1.3;
+    }
+
+    .m-desc {
+      font-size: 0.88rem; color: var(--mid); line-height: 1.75;
+      flex: 1; margin-bottom: 1.75rem;
+    }
+
+    .m-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .tag {
+      font-size: 0.72rem; color: var(--mid);
+      border: 1px solid var(--line); padding: 0.15rem 0.6rem;
+      border-radius: 100px; background: var(--off);
+    }
+
+    /* ── PARCOURS ── */
+    #cto { background: var(--white); }
+
+    .parcours-layout {
+      display: grid; grid-template-columns: 1fr 380px; gap: 6rem; align-items: start;
+    }
+
+    .tl {
+      --tl-axis-x: 108px;
+      display: flex; flex-direction: column;
+    }
+
+    .tl-item {
+      display: grid; grid-template-columns: 100px 1fr;
+      gap: 2rem; padding-bottom: 3rem;
+      position: relative;
+    }
+
+    .tl-item:not(:last-child)::after {
+      content: ''; position: absolute;
+      left: var(--tl-axis-x); top: 1.5rem; bottom: 0;
+      width: 1px; background: var(--line);
+    }
+
+    .tl-date {
+      font-size: 0.78rem; color: var(--light); font-weight: 400;
+      text-align: right; padding: 0.1rem 0.75rem 0 0; line-height: 1.5;
+    }
+
+    .tl-dot {
+      position: absolute; left: calc(var(--tl-axis-x) - 6.5px); top: 0.35rem;
+      width: 13px; height: 13px; border-radius: 50%;
+      background: var(--white); border: 1.5px solid var(--text);
+    }
+
+    .tl-dot-active { background: var(--text); }
+
+    .tl-co {
+      font-size: 0.72rem; font-weight: 500; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.2rem;
+    }
+
+    .tl-role {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; font-weight: 400; letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .tl-metrics { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+
+    .metric {
+      font-size: 0.72rem; font-weight: 500;
+      color: var(--green);
+      background: #e6f4ea; padding: 0.15rem 0.65rem;
+      border-radius: 100px;
+    }
+
+    .tl-desc { font-size: 0.86rem; color: var(--mid); line-height: 1.7; }
+
+    /* sidebar */
+    .sidebar { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+
+    .sidebar-block { background: var(--white); padding: 1.75rem; }
+
+    .sb-label {
+      font-size: 0.72rem; font-weight: 500; color: var(--mid);
+      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 1.25rem;
+    }
+
+    .book-link {
+      display: flex; align-items: flex-start; gap: 1rem;
+      text-decoration: none; padding: 0.75rem;
+      margin: -0.75rem; border-radius: 8px;
+      transition: background 0.15s; margin-bottom: 0.5rem;
+    }
+
+    .book-link:last-child { margin-bottom: -0.75rem; }
+    .book-link:hover { background: var(--off); }
+
+    .book-color { width: 3px; height: 42px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+
+    .book-title { font-size: 0.86rem; font-weight: 500; color: var(--text); display: block; margin-bottom: 0.15rem; line-height: 1.4; }
+    .book-meta { font-size: 0.75rem; color: var(--mid); }
+
+    .cert-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cert { font-size: 0.72rem; color: var(--mid); border: 1px solid var(--line); padding: 0.2rem 0.65rem; border-radius: 100px; }
+
+    /* ── OSS ── */
+    #oss { background: var(--off); }
+
+    .oss-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--line); border: 1px solid var(--line);
+    }
+
+    .oss-card {
+      background: var(--white); padding: 2.5rem;
+      transition: background 0.2s;
+    }
+
+    .oss-card:hover { background: var(--off); }
+
+    .oss-main { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+    .oss-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; color: var(--mid); margin-bottom: 1rem;
+    }
+
+    .oss-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+    .oss-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem; font-weight: 400; letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .oss-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.5rem; }
+
+    .oss-link {
+      font-size: 0.82rem; color: var(--accent); text-decoration: none; font-weight: 500;
+      display: inline-flex; align-items: center; gap: 0.35rem;
+    }
+
+    .oss-link:hover { text-decoration: underline; }
+
+    .oss-link-arrow { font-size: 0.9rem; }
+
+    .oss-terminal {
+      background: #1a1a1a; border-radius: 10px; overflow: hidden;
+    }
+
+    .ot-bar {
+      background: #2a2a2a; padding: 0.7rem 1rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+
+    .ot-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+    .ot-body {
+      padding: 1.25rem 1.25rem;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.72rem; line-height: 1.85; color: #888;
+    }
+
+    .ot-body span { display: block; }
+    .ot-p { color: #f8be3a; } .ot-c { color: #e8e4dc; } .ot-f { color: #79abf0; }
+    .ot-ok { color: #68c76c; } .ot-cm { color: #555; }
+    .ot-cursor { display: inline-block; width: 7px; height: 12px; background: #f8be3a; vertical-align: middle; animation: blink 1s step-end infinite; }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* small OSS cards */
+    .oss-sm-badge { font-size: 0.72rem; color: var(--mid); margin-bottom: 0.75rem; }
+    .oss-sm-name { font-family: 'DM Serif Display', serif; font-size: 1.25rem; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .oss-sm-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.7; margin-bottom: 1.25rem; }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; border: 1px solid var(--line); border-right: none;
+    }
+
+    .p-step {
+      padding: 2.5rem 2rem; border-right: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+
+    .p-step:hover { background: var(--off); }
+
+    .p-n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem; font-weight: 400; letter-spacing: -0.06em;
+      color: var(--line); line-height: 1; margin-bottom: 1.5rem;
+    }
+
+    .p-title { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.6rem; }
+    .p-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+    }
+
+    .contact-left h2 { margin-bottom: 1rem; }
+
+    .contact-lead { font-size: 1rem; color: var(--mid); font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .contact-right { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+
+    .c-link {
+      display: flex; align-items: center; gap: 1.25rem;
+      padding: 1.5rem 1.75rem; background: var(--white);
+      text-decoration: none; transition: background 0.15s;
+    }
+
+    .c-link:hover { background: var(--off); }
+
+    .c-icon-wrap {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--off); display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+
+    .c-link-title { font-size: 0.9rem; font-weight: 500; color: var(--text); display: block; margin-bottom: 0.15rem; }
+    .c-link-sub { font-size: 0.78rem; color: var(--mid); }
+    .c-link-arrow { margin-left: auto; color: var(--light); font-size: 1rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 100%;
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      width: 100%;
+    }
+
+    footer { padding: 0; }
+
+    .footer-copy { font-size: 0.78rem; color: var(--mid); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links li:not(:last-child) { display: none; }
+      .hero { padding: 100px 1.5rem 3rem; min-height: auto; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem; }
+      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .section, .section-full-inner { padding: 4rem 1.5rem; }
+      .missions-grid { grid-template-columns: 1fr; }
+      .parcours-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .oss-grid { grid-template-columns: 1fr; }
+      .oss-main { grid-column: span 1; grid-template-columns: 1fr; gap: 2rem; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Jean-François Lépine</a>
+    <ul class="nav-links">
+      <li><a href="#missions">Missions</a></li>
+      <li><a href="#cto">Parcours</a></li>
+      <li><a href="#oss">Open source</a></li>
+      <li><a href="http://blog.lepine.pro" target="_blank">Blog</a></li>
+      <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div style="position:relative; overflow:hidden;">
+    <div class="hero" style="position:relative;">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        CTO · Expert qualité logicielle · 20 ans d'expérience
+      </div>
+      <h1>
+        Votre code<br>
+        mérite <em>mieux.</em>
+      </h1>
+      <p class="hero-desc">
+        J'audite, mesure et améliore la qualité de vos systèmes PHP et backend.<br>
+        Auteur de <strong>PhpMetrics</strong> (15M+ téléchargements), <strong>AST-Metrics</strong><br>
+        et du livre <strong>"Qualité logicielle pour développeurs back-end"</strong>.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Me contacter →</a>
+        <a href="https://analyze.ast-metrics.dev" target="_blank" class="btn-outline">Analyser un repo ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat reveal">
+        <div class="stat-n">15<sup>M+</sup></div>
+        <div class="stat-l">Téléchargements<br>PhpMetrics</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-n">2.6<sup>k</sup></div>
+        <div class="stat-l">Étoiles GitHub<br>PhpMetrics</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-n">2</div>
+        <div class="stat-l">Livres publiés<br>chez Eyrolles</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-n">20</div>
+        <div class="stat-l">Ans d'expérience<br>en ingénierie</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSIONS -->
+  <div class="section-full">
+    <div class="section-full-inner" id="missions">
+      <div class="eyebrow">Missions</div>
+      <h2>Ce que je peux<br>faire pour vous</h2>
+      <p class="section-lead">Interventions ciblées pour équipes qui veulent livrer plus vite, avec moins de risques.</p>
+      <div class="missions-grid">
+        <div class="m-card reveal">
+          <div class="m-num">01</div>
+          <div class="m-title">Audit de qualité de code et des pratiques</div>
+          <p class="m-desc">Analyse complète de votre codebase. Dette technique, couplage, complexité, couverture. Pas 80 pages de contenus abstraits - une feuille de route actionnable. Audits qualité, sécurité et performance réalisés notamment pour L'Oréal, Nissan, Toyota, le Ministère de l'Intérieur et Arrow.</p>
+          <div class="m-tags"><span class="tag">PHP</span><span class="tag">AST-Metrics</span><span class="tag">PhpMetrics</span></div>
+        </div>
+        <div class="m-card reveal">
+          <div class="m-num">02</div>
+          <div class="m-title">Industrialisation</div>
+          <p class="m-desc">Pipelines CI/CD, quality gates automatisés, standards de code. Du chaos vers le déploiement serein. +190% DORA, c'est ce que j'ai atteint chez AlumnForce.</p>
+          <div class="m-tags"><span class="tag">CI/CD</span><span class="tag">Quality gates</span><span class="tag">DevOps</span></div>
+        </div>
+        <div class="m-card reveal">
+          <div class="m-num">03</div>
+          <div class="m-title">Architecture & DDD</div>
+          <p class="m-desc">Systèmes modulaires et évolutifs. Hexagonal, DDD, CQRS, event-driven. Exemple : migration monolithe → microservices pour 5,5M d'utilisateurs ; j'ai aussi mené ce type de migration chez LaRucheQuiDit.</p>
+          <div class="m-tags"><span class="tag">DDD</span><span class="tag">CQRS</span><span class="tag">Microservices</span></div>
+        </div>
+        <div class="m-card reveal">
+          <div class="m-num">04</div>
+          <div class="m-title">Mission de redressement</div>
+          <p class="m-desc">Reprise technique en contexte de crise - départ CTO, deadline ferme, dette accumulée. Stabilisation de la plateforme et remise en capacité de livraison chez Bluspark.</p>
+          <div class="m-tags"><span class="tag">CTO as a service</span><span class="tag">Performance</span></div>
+        </div>
+        <div class="m-card reveal">
+          <div class="m-num">05</div>
+          <div class="m-title">Stratégie de tests</div>
+          <p class="m-desc">Pyramide de tests, mutation testing, couverture pertinente. Tester ce qui compte - pas ce qui est facile. Certifié ISTQB.</p>
+          <div class="m-tags"><span class="tag">PHPUnit</span><span class="tag">Mutation testing</span><span class="tag">ISTQB</span></div>
+        </div>
+        <div class="m-card reveal">
+          <div class="m-num">06</div>
+          <div class="m-title">Coaching & formation</div>
+          <p class="m-desc">Montée en compétences sur les pratiques de qualité. Formats courts ou long terme. +100 développeurs accompagnés : Radio France, L'Équipe, Ministère de la Défense, France Télévisions.</p>
+          <div class="m-tags"><span class="tag">Formation</span><span class="tag">Code review</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARCOURS -->
+  <div class="section-full" id="cto">
+    <div class="section-full-inner">
+      <div class="eyebrow">Parcours</div>
+      <h2>CTO. <em>Praticien.</em></h2>
+      <p class="section-lead">Les mains dans le code depuis 20 ans. Des résultats mesurables à chaque poste.</p>
+      <div class="parcours-layout">
+        <div class="tl">
+          <div class="tl-item reveal">
+            <div class="tl-date">2025<br>→ auj.</div>
+            <div class="tl-dot tl-dot-active"></div>
+            <div>
+              <div class="tl-co">GlobalExam · EdTech SaaS</div>
+              <div class="tl-role">CTO</div>
+              <div class="tl-metrics">
+                <span class="metric">+20,5 j/mois gagnés (IA)</span>
+                <span class="metric">97% fiabilité scoring</span>
+              </div>
+              <p class="tl-desc">Création d'une équipe de recherche IA, intégration de modèles IRT et LLM pour le scoring. Bus de données 1M messages/jour (Athena, Kinesis).</p>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">2024<br>→ 2025</div>
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-co">Bluspark · GovTech SaaS</div>
+              <div class="tl-role">CTO - Mission de redressement</div>
+              <p class="tl-desc">Reprise en contexte de crise (départ CEO/CTO). Livraison réussie d'un projet critique pour la Ville de Rennes avec deadline ferme.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">2018<br>→ 2024</div>
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-co">AlumnForce · EdTech SaaS</div>
+              <div class="tl-role">Senior Engineer → CTO</div>
+              <div class="tl-metrics">
+                <span class="metric">+190% DORA (30 → 87)</span>
+                <span class="metric">RTO 3 sem → 4h</span>
+                <span class="metric">+16M events/mois</span>
+              </div>
+              <p class="tl-desc">Exemple : migration monolithe → CQRS/DDD/microservices pour 5,5M utilisateurs ; j'ai aussi mené ce type de transformation chez LaRucheQuiDit. Infrastructure multi-cloud (350 serveurs, 4 fournisseurs).</p>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">2015<br>→ 2018</div>
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-co">Radio France · Média</div>
+              <div class="tl-role">Software Quality Lead</div>
+              <p class="tl-desc">+100 développeurs accompagnés : Radio France, L'Équipe, Ministère de la Défense, France Télévisions. CI/CD, analyse statique, standards d'architecture partagés entre équipes.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">2012<br>→ 2015</div>
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-co">Alter Way · ESN</div>
+              <div class="tl-role">Principal Architect</div>
+              <p class="tl-desc">Conseil en architecture SaaS pour Ministère de la Défense, Ministère de l'Intérieur, France Télévisions.</p>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">2006<br>→ 2012</div>
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-co">Believe Digital · Amo&Soft</div>
+              <div class="tl-role">Développeur web</div>
+              <p class="tl-desc">Démarrage de carrière comme développeur web dans plusieurs boîtes. Réalisation de projets web et montée en compétences sur les fondamentaux d'architecture et de qualité.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="sidebar">
+            <div class="sidebar-block reveal">
+              <div class="sb-label">Publications</div>
+              <a href="https://www.amazon.fr/Qualit%C3%A9-logicielle-pour-d%C3%A9veloppeurs-back-end/dp/2416012673/" target="_blank" class="book-link">
+                <div class="book-color" style="background:#1a73e8"></div>
+                <div>
+                  <span class="book-title">Qualité logicielle pour développeurs back-end</span>
+                  <span class="book-meta">Eyrolles · 2023</span>
+                </div>
+              </a>
+              <a href="https://www.eyrolles.com/Informatique/Livre/industrialisation-php-5-outils-et-bonnes-pratiques-9782212134803/" target="_blank" class="book-link">
+                <div class="book-color" style="background:#bdc1c6"></div>
+                <div>
+                  <span class="book-title">Industrialisation PHP 5 - outils et bonnes pratiques</span>
+                  <span class="book-meta">Eyrolles · 2012</span>
+                </div>
+              </a>
+            </div>
+            <div class="sidebar-block reveal">
+              <div class="sb-label">Certifications & formation</div>
+              <div class="cert-chips">
+                <span class="cert">INSA Rennes</span>
+                <span class="cert">Symfony</span>
+                <span class="cert">Zend PHP</span>
+                <span class="cert">ISTQB</span>
+                <span class="cert">AWS</span>
+              </div>
+            </div>
+            <div class="sidebar-block reveal">
+              <div class="sb-label">Communauté</div>
+              <p style="font-size:0.84rem;color:var(--mid);line-height:1.7;">Ancien secrétaire AFUP. Mentor de conférenciers. Forum PHP, AFUP Days, PHP Tour.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OSS -->
+  <div class="section-full" id="oss" style="background:var(--off)">
+    <div class="section-full-inner">
+      <div class="eyebrow">Open source</div>
+      <h2>Des outils <em>en production.</em></h2>
+      <p class="section-lead">Pas des side projects - les outils que j'utilise en mission, adoptés par des milliers d'équipes.</p>
+      <div class="oss-grid">
+        <div class="oss-card oss-main reveal">
+          <div>
+            <div class="oss-badge"><div class="oss-badge-dot"></div> 2.6k étoiles · 15M+ téléchargements</div>
+            <div class="oss-name">PhpMetrics</div>
+            <p class="oss-desc">Analyse statique PHP avec dashboards HTML visuels. Maintenabilité, complexité cyclomatique, couplage - standard de facto dans l'écosystème PHP.</p>
+            <a href="https://github.com/phpmetrics/PhpMetrics" target="_blank" class="oss-link">github.com/phpmetrics/PhpMetrics <span class="oss-link-arrow">↗</span></a>
+          </div>
+          <div class="oss-terminal">
+            <div class="ot-bar">
+              <div class="ot-dot" style="background:#e05540"></div>
+              <div class="ot-dot" style="background:#f8be3a"></div>
+              <div class="ot-dot" style="background:#68c76c"></div>
+            </div>
+            <div class="ot-body">
+              <span><span class="ot-p">$</span> <span class="ot-c">phpmetrics</span> <span class="ot-f">--report-html</span>=report/ src/</span>
+              <span class="ot-cm">  Analyzing 847 PHP files…</span>
+              <span>&nbsp;</span>
+              <span class="ot-ok">  ✓ Maintainability index computed</span>
+              <span class="ot-ok">  ✓ Cyclomatic complexity mapped</span>
+              <span class="ot-ok">  ✓ Coupling graph generated</span>
+              <span class="ot-ok">  ✓ report/index.html ready</span>
+              <span>&nbsp;</span>
+              <span><span class="ot-p">$</span> <span class="ot-cursor"></span></span>
+            </div>
+          </div>
+        </div>
+        <div class="oss-card reveal">
+          <div class="oss-badge"><div class="oss-badge-dot"></div> Multi-langages - PHP · Go · Rust · Python</div>
+          <div class="oss-sm-name">AST-Metrics</div>
+          <p class="oss-sm-desc">Analyse statique par AST via tree-sitter. Graphes de dépendances, détection de communautés (Louvain/Leiden), modèles d'architecture personnalisés.</p>
+          <a href="https://ast-metrics.dev" target="_blank" class="oss-link">ast-metrics.dev <span class="oss-link-arrow">↗</span></a>
+        </div>
+        <div class="oss-card reveal">
+          <div class="oss-sm-badge">Nouveau · 2025</div>
+          <div class="oss-sm-name">Analyze live</div>
+          <p class="oss-sm-desc">Visualisez la qualité de n'importe quel repo GitHub public en quelques secondes. Format <code style="font-family:monospace;font-size:0.82rem;color:var(--accent)">owner/repo</code>.</p>
+          <a href="https://analyze.ast-metrics.dev" target="_blank" class="oss-link">analyze.ast-metrics.dev <span class="oss-link-arrow">↗</span></a>
+        </div>
+        <div class="oss-card reveal">
+          <div class="oss-sm-badge">Mutation testing</div>
+          <div class="oss-sm-name">MutaTesting</div>
+          <p class="oss-sm-desc">Mutation testing pour PHP avec optimisations probabilistes. Prouvez que vos tests attrapent vraiment les régressions.</p>
+          <a href="https://github.com/Halleck45/MutaTesting" target="_blank" class="oss-link">github.com/Halleck45/MutaTesting <span class="oss-link-arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="section-full">
+    <div class="section-full-inner">
+      <div class="eyebrow">Approche</div>
+      <h2>Du diagnostic <em>à l'impact.</em></h2>
+      <p class="section-lead">Méthodologie systématique. Des résultats mesurables à chaque étape.</p>
+      <div class="process-grid">
+        <div class="p-step reveal">
+          <div class="p-n">01</div>
+          <div class="p-title">Diagnostic</div>
+          <p class="p-desc">Analyse automatisée de votre code. Zones de risque identifiées en quelques heures.</p>
+        </div>
+        <div class="p-step reveal">
+          <div class="p-n">02</div>
+          <div class="p-title">Priorisation</div>
+          <p class="p-desc">Impact business vs effort technique. On répare ce qui coûte le plus cher en silence, pas tout.</p>
+        </div>
+        <div class="p-step reveal">
+          <div class="p-n">03</div>
+          <div class="p-title">Mise en œuvre</div>
+          <p class="p-desc">Accompagnement de vos équipes. Refactoring, CI/CD, quality gates. Coaching technique et montée en compétences.</p>
+        </div>
+        <div class="p-step reveal">
+          <div class="p-n">04</div>
+          <div class="p-title">Mesure</div>
+          <p class="p-desc">Dashboard de suivi dans le temps. Les améliorations sont visibles et défendables.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section-full" id="contact">
+    <div class="section-full-inner">
+      <div class="contact-layout">
+        <div class="contact-left reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Un projet ?<br><em>Parlons-en.</em></h2>
+          <p class="contact-lead">Audit ponctuel, CTO as a service, accompagnement long terme ou formation. Je réponds sous 24h.</p>
+        </div>
+        <div class="contact-right reveal">
+          <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/" target="_blank" class="c-link">
+            <div class="c-icon-wrap">💼</div>
+            <div>
+              <span class="c-link-title">LinkedIn</span>
+              <span class="c-link-sub">Message direct, réponse rapide</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+          <a href="http://blog.lepine.pro" target="_blank" class="c-link">
+            <div class="c-icon-wrap">✍️</div>
+            <div>
+              <span class="c-link-title">Blog</span>
+              <span class="c-link-sub">Industrialisation, qualité, PHP, Go</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+          <a href="https://github.com/Halleck45" target="_blank" class="c-link">
+            <div class="c-icon-wrap">⚙️</div>
+            <div>
+              <span class="c-link-title">GitHub @Halleck45</span>
+              <span class="c-link-sub">Projets open source en détail</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+          <a href="pdf/cv-jflepine-2025.pdf" target="_blank" class="c-link">
+            <div class="c-icon-wrap">📄</div>
+            <div>
+              <span class="c-link-title">CV PDF</span>
+              <span class="c-link-sub">Parcours complet</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2025 Jean-François Lépine</span>
+      <div class="footer-links">
+        <a href="https://github.com/Halleck45">GitHub</a>
+        <a href="http://blog.lepine.pro">Blog</a>
+        <a href="https://ast-metrics.dev">AST-Metrics</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
