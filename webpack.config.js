@@ -48,6 +48,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      template: 'prestations.html',
+      filename: 'prestations.html'
+    }),
     new HTMLInlineCSSWebpackPlugin({
       // ignore not in src folder
       filter(fileName) {

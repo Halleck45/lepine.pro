@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audits & Formations — Jean-François Lépine</title>
+  <meta name="description" content="Audits de qualité & architecture, formations et conférences pour équipes de développement. Diagnostic concret, recommandations priorisées." />
+  <meta name="keywords" content="audit code, audit architecture, formation qualité logicielle, formation tests, CI/CD, PHP, consultant, Jean-François Lépine" />
+  <meta name="author" content="Jean-François Lépine" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lepine.pro/prestations.html" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jean-François Lépine" />
+  <meta property="og:title" content="Audits & Formations — Jean-François Lépine" />
+  <meta property="og:description" content="Audits de qualité & architecture, formations et conférences pour équipes de développement." />
+  <meta property="og:url" content="https://lepine.pro/prestations.html" />
+  <meta property="og:image" content="https://lepine.pro/images/jf-lepine.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --white: #ffffff;
+      --off: #f8f8f6;
+      --text: #1a1a1a;
+      --mid: #5f6368;
+      --light: #bdc1c6;
+      --line: #e8e8e6;
+      --accent: #1a73e8;
+      --accent-light: #e8f0fe;
+      --green: #137333;
+      --red: #c5221f;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 3rem;
+      height: 64px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-size: 0.92rem; font-weight: 500; letter-spacing: -0.01em;
+      color: var(--text); text-decoration: none;
+    }
+
+    .nav-links { display: flex; list-style: none; gap: 0; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 400; color: var(--mid);
+      text-decoration: none; padding: 0 1rem; height: 64px;
+      display: flex; align-items: center;
+      transition: color 0.15s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); border-bottom-color: var(--text); }
+
+    .nav-cta {
+      margin-left: 0.5rem;
+      background: var(--accent) !important;
+      color: white !important;
+      padding: 0 1.25rem !important;
+      border-radius: 100px !important;
+      height: 36px !important;
+      font-weight: 500 !important;
+      border-bottom: none !important;
+    }
+
+    .nav-cta:hover { background: #1557b0 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 60vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 120px 3rem 5rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem; font-weight: 500; color: var(--accent);
+      letter-spacing: 0.01em; margin-bottom: 2rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      opacity: 0; animation: up 0.5s ease 0.1s forwards;
+    }
+
+    .hero-tag-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      max-width: 800px;
+      margin-bottom: 2rem;
+      opacity: 0; animation: up 0.65s ease 0.15s forwards;
+    }
+
+    h1 em { font-style: italic; color: var(--mid); }
+
+    .hero-desc {
+      font-size: 1.15rem; font-weight: 300; color: var(--mid);
+      max-width: 580px; line-height: 1.8; margin-bottom: 3rem;
+      opacity: 0; animation: up 0.65s ease 0.3s forwards;
+    }
+
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+
+    /* ── SECTIONS ── */
+    .section-full { border-bottom: 1px solid var(--line); }
+    .section-full-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; }
+
+    .eyebrow {
+      font-size: 0.78rem; font-weight: 500; color: var(--mid);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    h2 em { font-style: italic; color: var(--mid); }
+
+    h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem; font-weight: 400; letter-spacing: -0.02em;
+      margin-bottom: 0.75rem; line-height: 1.3;
+    }
+
+    .section-lead {
+      font-size: 1rem; color: var(--mid); font-weight: 300;
+      max-width: 500px; line-height: 1.8; margin-bottom: 4rem;
+    }
+
+    /* ── INTRO ── */
+    .intro-text {
+      font-size: 1rem; color: var(--mid); font-weight: 300; line-height: 1.9;
+      max-width: 680px; margin-bottom: 4rem;
+    }
+
+    /* ── AUDIT CARDS ── */
+    .audit-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .audit-card {
+      background: var(--white); padding: 2.5rem;
+      display: flex; flex-direction: column;
+      transition: background 0.2s;
+    }
+
+    .audit-card:hover { background: var(--off); }
+
+    .audit-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; font-weight: 500; color: var(--accent);
+      background: var(--accent-light); padding: 0.2rem 0.65rem;
+      border-radius: 100px; margin-bottom: 1.5rem;
+      align-self: flex-start;
+    }
+
+    .audit-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem; font-weight: 400; letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .audit-meta {
+      font-size: 0.82rem; color: var(--mid); margin-bottom: 1.25rem;
+    }
+
+    .audit-price {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem; font-weight: 400; letter-spacing: -0.04em;
+      color: var(--text); margin-bottom: 0.25rem; line-height: 1;
+    }
+
+    .audit-price-sub { font-size: 0.75rem; color: var(--mid); margin-bottom: 1.5rem; }
+
+    .audit-sep { height: 1px; background: var(--line); margin: 1.5rem 0; }
+
+    .audit-desc {
+      font-size: 0.87rem; color: var(--mid); line-height: 1.75; flex: 1;
+    }
+
+    /* ── FORMATIONS ── */
+    .formations-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .formation-card {
+      background: var(--white); padding: 2.5rem;
+      transition: background 0.2s;
+    }
+
+    .formation-card:hover { background: var(--off); }
+
+    .f-num {
+      font-size: 0.72rem; color: var(--light);
+      font-weight: 500; margin-bottom: 1.5rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .f-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; font-weight: 400; letter-spacing: -0.02em;
+      margin-bottom: 0.6rem; line-height: 1.3;
+    }
+
+    .f-desc {
+      font-size: 0.87rem; color: var(--mid); line-height: 1.75;
+    }
+
+    /* ── CONF ── */
+    .conf-block {
+      display: grid; grid-template-columns: 1fr 380px; gap: 6rem; align-items: start;
+    }
+
+    .conf-text { font-size: 0.95rem; color: var(--mid); line-height: 1.8; }
+
+    .conf-events {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--line); border: 1px solid var(--line);
+    }
+
+    .conf-event {
+      background: var(--white); padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+
+    .conf-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+    }
+
+    .conf-event-name { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+    .conf-event-sub { font-size: 0.78rem; color: var(--mid); }
+
+    /* ── POURQUOI ── */
+    #pourquoi { background: var(--off); }
+
+    .pourquoi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 3rem;
+    }
+
+    .pourquoi-card {
+      background: var(--white); padding: 2.5rem;
+      transition: background 0.2s;
+    }
+
+    .pourquoi-card:hover { background: var(--off); }
+
+    .pourquoi-n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 3rem; font-weight: 400; letter-spacing: -0.06em;
+      color: var(--line); line-height: 1; margin-bottom: 1.25rem;
+    }
+
+    .pourquoi-title { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .pourquoi-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── CONTACT ── */
+    #contact-cta { background: var(--white); }
+
+    .cta-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
+    }
+
+    .cta-left h2 { margin-bottom: 1rem; }
+
+    .cta-lead { font-size: 1rem; color: var(--mid); font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--text); color: white;
+      padding: 0 1.75rem; height: 48px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #2d2d2d; transform: translateY(-1px); }
+
+    .contact-right { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+
+    .c-link {
+      display: flex; align-items: center; gap: 1.25rem;
+      padding: 1.5rem 1.75rem; background: var(--white);
+      text-decoration: none; transition: background 0.15s;
+    }
+
+    .c-link:hover { background: var(--off); }
+
+    .c-icon-wrap {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--off); display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+
+    .c-link-title { font-size: 0.9rem; font-weight: 500; color: var(--text); display: block; margin-bottom: 0.15rem; }
+    .c-link-sub { font-size: 0.78rem; color: var(--mid); }
+    .c-link-arrow { margin-left: auto; color: var(--light); font-size: 1rem; }
+
+    /* ── FOOTER ── */
+    footer { padding: 0; border-top: 1px solid var(--line); }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+      width: 100%;
+    }
+
+    .footer-copy { font-size: 0.78rem; color: var(--mid); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links li:not(:last-child) { display: none; }
+      .hero { padding: 100px 1.5rem 3rem; min-height: auto; }
+      .section-full-inner { padding: 4rem 1.5rem; }
+      .audit-grid { grid-template-columns: 1fr; }
+      .formations-grid { grid-template-columns: 1fr; }
+      .conf-block { grid-template-columns: 1fr; gap: 3rem; }
+      .pourquoi-grid { grid-template-columns: 1fr; }
+      .cta-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Jean-François Lépine</a>
+    <ul class="nav-links">
+      <li><a href="/#missions">Missions</a></li>
+      <li><a href="/#cto">Parcours</a></li>
+      <li><a href="/#oss">Open source</a></li>
+      <li><a href="prestations.html" class="active">Prestations</a></li>
+      <li><a href="http://blog.lepine.pro" target="_blank">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div style="border-bottom: 1px solid var(--line);">
+    <div class="hero">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        Audits · Formations · Coaching · Redressement
+      </div>
+      <h1>Audits &amp;<br><em>Formations</em></h1>
+      <p class="hero-desc">
+        Vous rencontrez des problèmes de qualité, de dette technique, de livraison ?<br>
+        Je peux vous aider à y voir clair et à <strong>avancer</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- CE QUE JE FAIS -->
+  <div class="section-full">
+    <div class="section-full-inner">
+      <div class="eyebrow">Ce que je fais</div>
+      <h2>Trois types <em>d'interventions</em></h2>
+      <p class="intro-text reveal">
+        J'interviens auprès d'équipes de développement sur trois types de missions : audits de qualité &amp; architecture, formations et coaching, et missions de redressement. Dans tous les cas, le point de départ c'est votre contexte réel. Pas un catalogue standard.
+      </p>
+    </div>
+  </div>
+
+  <!-- AUDITS -->
+  <div class="section-full" id="audits">
+    <div class="section-full-inner">
+      <div class="eyebrow">Audits de qualité &amp; architecture</div>
+      <h2>Du diagnostic <em>concret.</em></h2>
+      <p class="section-lead">Je plonge dans votre codebase et vos pratiques, je mesure, j'analyse, et je vous remets un rapport concret avec des recommandations priorisées. Pas un audit académique : des actions réalistes adaptées à votre contexte.</p>
+      <div class="audit-grid">
+
+        <div class="audit-card reveal">
+          <div class="audit-badge">Flash</div>
+          <div class="audit-name">Audit Flash</div>
+          <div class="audit-meta">2 jours</div>
+          <div class="audit-price">2 500 €</div>
+          <div class="audit-price-sub">HT</div>
+          <div class="audit-sep"></div>
+          <p class="audit-desc">Diagnostic rapide avec rapport et restitution. Idéal pour obtenir une première lecture honnête de votre situation : dette technique, risques majeurs, priorités.</p>
+        </div>
+
+        <div class="audit-card reveal">
+          <div class="audit-badge" style="background:#e6f4ea; color: var(--green);">Complet</div>
+          <div class="audit-name">Audit Complet</div>
+          <div class="audit-meta">4 à 5 jours</div>
+          <div class="audit-price">5 000 – 6 500 €</div>
+          <div class="audit-price-sub">HT</div>
+          <div class="audit-sep"></div>
+          <p class="audit-desc">Architecture, pratiques d'équipe, feuille de route 6 mois. Analyse en profondeur de votre codebase, de vos processus de livraison et de vos pratiques collectives.</p>
+        </div>
+
+        <div class="audit-card reveal">
+          <div class="audit-badge" style="background:#fce8e6; color: var(--red);">Ciblé</div>
+          <div class="audit-name">Audit Ciblé</div>
+          <div class="audit-meta">1 à 2 jours</div>
+          <div class="audit-price">1 200 – 2 000 €</div>
+          <div class="audit-price-sub">HT</div>
+          <div class="audit-sep"></div>
+          <p class="audit-desc">Périmètre défini ensemble : tests, CI/CD, un module critique, une pratique spécifique. Intervention chirurgicale sur le sujet qui vous préoccupe.</p>
+        </div>
+
+        <div class="audit-card reveal">
+          <div class="audit-badge" style="background:#f3e8fd; color: #6a1b9a;">Accompagnement</div>
+          <div class="audit-name">Accompagnement continu</div>
+          <div class="audit-meta">Sur mesure, récurrent</div>
+          <div class="audit-price">Sur devis</div>
+          <div class="audit-price-sub">selon rythme et durée</div>
+          <div class="audit-sep"></div>
+          <p class="audit-desc">Coaching technique régulier de votre équipe : revues de code, pair programming, sessions de travail sur vos pratiques. Pas un audit ponctuel mais une montée en compétences durable, à votre rythme. Idéal pour ancrer des changements sur le long terme.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMATIONS -->
+  <div class="section-full" id="formations" style="background: var(--off);">
+    <div class="section-full-inner">
+      <div class="eyebrow">Formations</div>
+      <h2>Courtes. <em>Contextualisées.</em></h2>
+      <p class="section-lead">Des formations courtes (1 à 2 jours), construites sur votre contexte réel, pour des équipes jusqu'à 10 personnes.</p>
+      <div class="formations-grid">
+
+        <div class="formation-card reveal">
+          <div class="f-num">01</div>
+          <div class="f-title">Qualité logicielle en pratique</div>
+          <p class="f-desc">Mesurer, lire, corriger. Comment identifier objectivement les zones à risque d'une codebase, utiliser les outils d'analyse statique, et bâtir une culture de la qualité dans votre équipe.</p>
+        </div>
+
+        <div class="formation-card reveal">
+          <div class="f-num">02</div>
+          <div class="f-title">Tests efficaces</div>
+          <p class="f-desc">De la pyramide au mutation testing. Comment tester ce qui compte vraiment, éviter les tests qui donnent confiance sans l'être, et mesurer la pertinence de votre couverture.</p>
+        </div>
+
+        <div class="formation-card reveal">
+          <div class="f-num">03</div>
+          <div class="f-title">Industrialisation &amp; CI/CD</div>
+          <p class="f-desc">Livrer plus souvent, avec plus de confiance. Pipelines robustes, quality gates automatisés, réduction du temps de feedback. Basé sur des cas réels et les outils que vous utilisez.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- REDRESSEMENT -->
+  <div class="section-full" id="redressement">
+    <div class="section-full-inner">
+      <div class="eyebrow">Mission de redressement</div>
+      <h2>Quand ça <em>brûle.</em></h2>
+      <p class="section-lead">Départ CTO, deadline ferme, dette accumulée, équipe en difficulté. J'interviens en contexte de crise pour stabiliser, livrer, et remettre l'équipe en capacité de tenir la cadence.</p>
+      <div class="conf-block">
+        <div>
+          <p class="conf-text reveal" style="margin-bottom: 1.5rem;">
+            Ce type de mission ne ressemble pas aux autres. Il n'y a pas de diagnostic tranquille ni de feuille de route à six mois. Il y a une situation dégradée, des engagements à tenir, et des décisions à prendre vite.
+          </p>
+          <p class="conf-text reveal" style="margin-bottom: 1.5rem;">
+            J'ai mené ce type d'intervention chez Bluspark : reprise en main après départ simultané du CEO et du CTO, livraison réussie d'un projet critique pour la Ville de Rennes avec deadline non négociable.
+          </p>
+          <p class="conf-text reveal">
+            Si vous êtes dans cette situation, parlons-en directement. Je peux intervenir rapidement.
+          </p>
+        </div>
+        <div class="conf-events reveal">
+          <div class="conf-event">
+            <div class="conf-dot"></div>
+            <div>
+              <div class="conf-event-name">Prise en main rapide</div>
+              <div class="conf-event-sub">Audit express, décisions immédiates</div>
+            </div>
+          </div>
+          <div class="conf-event">
+            <div class="conf-dot"></div>
+            <div>
+              <div class="conf-event-name">Stabilisation technique</div>
+              <div class="conf-event-sub">Réduction des risques, remise en livraison</div>
+            </div>
+          </div>
+          <div class="conf-event">
+            <div class="conf-dot"></div>
+            <div>
+              <div class="conf-event-name">Tenue des engagements</div>
+              <div class="conf-event-sub">Deadlines fermes, clients, partenaires</div>
+            </div>
+          </div>
+          <div class="conf-event">
+            <div class="conf-dot"></div>
+            <div>
+              <div class="conf-event-name">Passation structurée</div>
+              <div class="conf-event-sub">Remise en ordre pour la suite</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POURQUOI MOI -->
+  <div class="section-full" id="pourquoi" style="background: var(--off);">
+    <div class="section-full-inner">
+      <div class="eyebrow">Pourquoi moi ?</div>
+      <h2>Praticien. <em>Pas consultant en chambre.</em></h2>
+      <p class="section-lead">Je pratique ces sujets au quotidien, j'en écris, j'en parle en conférence depuis plus de 12 ans.</p>
+      <div class="pourquoi-grid">
+
+        <div class="pourquoi-card reveal">
+          <div class="pourquoi-n">01</div>
+          <div class="pourquoi-title">Outils open source</div>
+          <p class="pourquoi-desc">Créateur de PhpMetrics (2 600+ ⭐, 15M+ téléchargements) et AST-Metrics. Ce sont les outils que j'utilise en mission. Pas des jouets académiques.</p>
+        </div>
+
+        <div class="pourquoi-card reveal">
+          <div class="pourquoi-n">02</div>
+          <div class="pourquoi-title">2 livres chez Eyrolles</div>
+          <p class="pourquoi-desc"><em>Qualité logicielle pour développeurs back-end</em> (2023) et <em>Industrialisation PHP 5</em> (2012). Des références sur lesquelles j'engage ma signature.</p>
+        </div>
+
+        <div class="pourquoi-card reveal">
+          <div class="pourquoi-n">03</div>
+          <div class="pourquoi-title">12 ans de conférences</div>
+          <p class="pourquoi-desc">AFUP, Forum PHP, Station F. Ancien secrétaire AFUP, mentor de conférenciers. Ces sujets, je les confronte à des centaines de développeurs chaque année.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section-full" id="contact-cta">
+    <div class="section-full-inner">
+      <div class="cta-layout">
+        <div class="cta-left reveal">
+          <div class="eyebrow">Me contacter</div>
+          <h2>Un projet ?<br><em>Parlons-en.</em></h2>
+          <p class="cta-lead">Audit ponctuel, formation sur mesure, conférence ou accompagnement long terme. Je réponds sous 24h.</p>
+          <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/" target="_blank" class="btn-primary">Me contacter sur LinkedIn →</a>
+        </div>
+        <div class="contact-right reveal">
+          <a href="https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/" target="_blank" class="c-link">
+            <div class="c-icon-wrap">💼</div>
+            <div>
+              <span class="c-link-title">LinkedIn</span>
+              <span class="c-link-sub">Message direct, réponse rapide</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+          <a href="http://blog.lepine.pro" target="_blank" class="c-link">
+            <div class="c-icon-wrap">✍️</div>
+            <div>
+              <span class="c-link-title">Blog</span>
+              <span class="c-link-sub">Industrialisation, qualité, PHP, Go</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+          <a href="https://github.com/Halleck45" target="_blank" class="c-link">
+            <div class="c-icon-wrap">⚙️</div>
+            <div>
+              <span class="c-link-title">GitHub @Halleck45</span>
+              <span class="c-link-sub">Projets open source en détail</span>
+            </div>
+            <div class="c-link-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2025 Jean-François Lépine</span>
+      <div class="footer-links">
+        <a href="https://github.com/Halleck45">GitHub</a>
+        <a href="http://blog.lepine.pro">Blog</a>
+        <a href="https://ast-metrics.dev">AST-Metrics</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
