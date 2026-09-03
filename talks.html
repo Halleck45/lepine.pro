@@ -57,20 +57,6 @@
             "https://github.com/Halleck45",
             "https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/"
           ]
-        },
-        {
-          "@type": "Event",
-          "name": "J'ai analysé 236 Go de code PHP : état des lieux d'un écosystème",
-          "startDate": "2026-10-08T16:30:00+02:00",
-          "endDate": "2026-10-08T17:10:00+02:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": { "@type": "Place", "name": "Forum PHP 2026, Disneyland Paris", "address": "Marne-la-Vallée, France" },
-          "superEvent": { "@type": "Event", "name": "Forum PHP 2026", "url": "https://event.afup.org/forum-php-2026/" },
-          "performer": { "@id": "https://lepine.pro/#person" },
-          "organizer": { "@type": "Organization", "name": "AFUP", "url": "https://afup.org" },
-          "url": "https://event.afup.org/forum-php-2026/programme/",
-          "inLanguage": "fr"
         }
       ]
     }
@@ -153,7 +139,6 @@
 
     /* ── HERO ── */
     .hero {
-      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: center;
       padding: 130px 3rem 5rem;
       max-width: 1200px; margin: 0 auto;
     }
@@ -211,82 +196,6 @@
     }
 
     .btn-outline:hover { border-color: var(--mid); background: var(--off); }
-
-    /* next talk card in hero */
-    .next {
-      background: var(--text); color: white; border-radius: 14px;
-      padding: 2rem 2rem 1.75rem; position: relative; overflow: hidden;
-      opacity: 0; animation: up 0.65s ease 0.5s forwards;
-    }
-
-    .next::before {
-      content: ''; position: absolute; inset: auto -30% -60% auto;
-      width: 320px; height: 320px; border-radius: 50%;
-      background: radial-gradient(closest-side, rgba(26,115,232,0.55), transparent 70%);
-      pointer-events: none;
-    }
-
-    .next-label {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
-      color: #9ec1f5; margin-bottom: 1.25rem;
-    }
-
-    .next-pulse {
-      width: 8px; height: 8px; border-radius: 50%; background: #4d94f0;
-      box-shadow: 0 0 0 0 rgba(77,148,240,0.6); animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(77,148,240,0.6); }
-      70% { box-shadow: 0 0 0 10px rgba(77,148,240,0); }
-      100% { box-shadow: 0 0 0 0 rgba(77,148,240,0); }
-    }
-
-    .next-event { font-size: 0.8rem; color: #bdc1c6; margin-bottom: 0.4rem; }
-
-    .next-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.55rem; line-height: 1.2; letter-spacing: -0.02em;
-      margin-bottom: 1rem; position: relative;
-    }
-
-    .next-desc { font-size: 0.86rem; color: #bdc1c6; line-height: 1.7; margin-bottom: 1.5rem; position: relative; }
-
-    .next-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.78rem; color: #e8e8e6; margin-bottom: 1.5rem; }
-    .next-meta span::before { content: '·'; color: #5f6368; margin-right: 0.5rem; }
-    .next-meta span:first-child::before { content: none; }
-
-    .next-links { display: flex; flex-wrap: wrap; gap: 0.5rem; position: relative; }
-
-    .next-links a {
-      font-size: 0.78rem; text-decoration: none; color: white;
-      border: 1px solid rgba(255,255,255,0.25); padding: 0.35rem 0.85rem; border-radius: 100px;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .next-links a:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
-
-    /* ── STATS ── */
-    .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-
-    .stats-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 3rem;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-    }
-
-    .stat { padding: 2.5rem 0 2.5rem 2rem; border-right: 1px solid var(--line); }
-    .stat:first-child { padding-left: 0; }
-    .stat:last-child { border-right: none; }
-
-    .stat-n {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.8rem; font-weight: 400; letter-spacing: -0.04em;
-      line-height: 1; color: var(--text); margin-bottom: 0.35rem;
-    }
-
-    .stat-n sup { font-size: 1.4rem; color: var(--accent); }
-    .stat-l { font-size: 0.78rem; color: var(--mid); line-height: 1.4; }
 
     /* ── SECTIONS ── */
     .section-full { border-bottom: 1px solid var(--line); }
@@ -469,52 +378,6 @@
     .quote-src { font-size: 0.75rem; color: var(--mid); line-height: 1.5; }
     .quote-src strong { font-weight: 500; color: var(--text); display: block; }
 
-    /* ── TOPICS ── */
-    .topics-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-
-    .topic-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-
-    .topic { background: var(--white); padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 36px 1fr; gap: 1.25rem; transition: background 0.15s; }
-    .topic:hover { background: var(--off); }
-
-    .topic-n { font-size: 0.72rem; color: var(--light); font-weight: 500; padding-top: 0.25rem; font-variant-numeric: tabular-nums; }
-    .topic-title { font-family: 'DM Serif Display', serif; font-size: 1.1rem; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
-    .topic-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.7; }
-
-    .formats { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 2rem; }
-    .format { background: var(--white); padding: 1.25rem 1.75rem; display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-    .format-name { font-size: 0.9rem; font-weight: 500; }
-    .format-time { font-size: 0.78rem; color: var(--mid); white-space: nowrap; }
-
-    .topics-side p { font-size: 0.95rem; color: var(--mid); line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem; }
-    .topics-side p strong { color: var(--text); font-weight: 500; }
-
-    .sb-label {
-      font-size: 0.72rem; font-weight: 500; color: var(--mid);
-      text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 1rem;
-    }
-
-    .interviews { list-style: none; border-top: 1px solid var(--line); }
-    .interviews li { border-bottom: 1px solid var(--line); }
-
-    .interviews a {
-      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-      padding: 0.9rem 0; text-decoration: none; font-size: 0.88rem; color: var(--text);
-      transition: padding-left 0.15s;
-    }
-
-    .interviews a:hover { padding-left: 0.4rem; }
-    .interviews small { color: var(--mid); font-size: 0.75rem; white-space: nowrap; margin-left: auto; }
-    .interviews .arr { color: var(--light); }
-
-    .books { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2.5rem; }
-
-    .book-link { display: flex; align-items: flex-start; gap: 1rem; text-decoration: none; padding: 0.75rem; margin: -0.75rem; border-radius: 8px; transition: background 0.15s; }
-    .book-link:hover { background: var(--off); }
-    .book-color { width: 3px; height: 42px; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
-    .book-title { font-size: 0.86rem; font-weight: 500; color: var(--text); display: block; margin-bottom: 0.15rem; line-height: 1.4; }
-    .book-meta { font-size: 0.75rem; color: var(--mid); }
-
     /* ── CTA ── */
     .invite { text-align: center; max-width: 720px; margin: 0 auto; }
     .invite h2 { margin-bottom: 1.25rem; }
@@ -541,8 +404,7 @@
     @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
     @media (prefers-reduced-motion: reduce) {
-      .reveal, .hero-tag, h1, .hero-desc, .hero-actions, .next { opacity: 1; transform: none; animation: none; }
-      .next-pulse { animation: none; }
+      .reveal, .hero-tag, h1, .hero-desc, .hero-actions { opacity: 1; transform: none; animation: none; }
     }
 
     /* ── RESPONSIVE ── */
@@ -554,11 +416,7 @@
     @media (max-width: 900px) {
       nav { padding: 0 1.5rem; }
       .nav-links li:not(:last-child) { display: none; }
-      .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 100px 1.5rem 3rem; min-height: auto; }
-      .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 0 1.5rem; }
-      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
-      .stat:nth-child(2n) { border-right: none; }
-      .stat:nth-child(3) { padding-left: 0; }
+      .hero { padding: 100px 1.5rem 3rem; }
       .section-full-inner { padding: 4rem 1.5rem; }
       .video-grid { grid-template-columns: 1fr; }
       .video-card.featured { grid-column: span 1; }
@@ -567,7 +425,6 @@
       .talk { grid-template-columns: 1fr; gap: 0.6rem; }
       .talk-links { flex-direction: row; flex-wrap: wrap; align-items: center; }
       .quote-grid { grid-template-columns: 1fr; }
-      .topics-layout { grid-template-columns: 1fr; gap: 3rem; }
       .footer-inner { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
     }
   </style>
@@ -590,7 +447,6 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div>
       <div class="hero-tag">
         <div class="hero-tag-dot"></div>
         Conférences
@@ -607,52 +463,8 @@
       </p>
       <div class="hero-actions">
         <a href="#videos" class="btn-primary">Vidéos</a>
-        <a href="#sujets" class="btn-outline">Sujets disponibles</a>
+        <a href="#toutes" class="btn-outline">Toutes les interventions</a>
       </div>
-    </div>
-
-    <aside class="next" aria-label="Prochaine conférence">
-      <div class="next-label"><span class="next-pulse"></span> Prochaine date</div>
-      <div class="next-event">Forum PHP 2026 · Disneyland Paris</div>
-      <div class="next-title">J'ai analysé 236 Go de code PHP : état des lieux d'un écosystème</div>
-      <p class="next-desc">
-        J'ai téléchargé l'ensemble des dépôts Git open source PHP disponibles (236 Go) et fait tourner des
-        outils d'analyse dessus. Le talk présente ce qu'on y trouve : adoption des fonctionnalités récentes
-        du langage, longueur des méthodes, dette, écarts entre frameworks, et les limites de l'exercice.
-      </p>
-      <div class="next-meta">
-        <span>8 octobre 2026</span>
-        <span>16h30 – 17h10</span>
-        <span>Salle Ada Lovelace</span>
-      </div>
-      <div class="next-links">
-        <a href="https://event.afup.org/forum-php-2026/programme/" target="_blank" rel="noopener">Programme</a>
-        <a href="https://event.afup.org/forumphp2026-interview-jean-francois-lepine/" target="_blank" rel="noopener">Interview AFUP</a>
-        <a href="https://joind.in/event/forum-php-2026/jai-analyse-236-go-de-code-php--etat-des-lieux-dun-ecosysteme" target="_blank" rel="noopener">joind.in</a>
-      </div>
-    </aside>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stats-inner">
-      <div class="stat reveal">
-        <div class="stat-n">22</div>
-        <div class="stat-l">Interventions<br>depuis 2012</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n">7</div>
-        <div class="stat-l">Sessions Forum PHP,<br>PHP Tour et AFUP Day</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n">4.8<sup>/5</sup></div>
-        <div class="stat-l">Note moyenne<br>sur joind.in</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n">8</div>
-        <div class="stat-l">Vidéos<br>en ligne</div>
-      </div>
-    </div>
   </div>
 
   <!-- VIDEOS -->
@@ -796,10 +608,10 @@
         <div class="year reveal">
           <div class="year-n">2026</div>
           <div class="year-list">
-            <article class="talk" data-kind="conf">
+            <article class="talk" data-kind="conf" data-date="2026-10-09">
               <div class="talk-date">8 octobre</div>
               <div>
-                <span class="talk-kind k-upcoming">À venir</span>
+                <span class="talk-kind k-upcoming" data-upcoming>À venir</span>
                 <div class="talk-title">J'ai analysé 236 Go de code PHP : état des lieux d'un écosystème</div>
                 <div class="talk-event"><strong>Forum PHP 2026</strong> · Disneyland Paris · 40 min</div>
                 <p class="talk-abs">Méthodologie, résultats et limites de l'exercice : biais propre à l'open source, poids des très gros projets dans les moyennes.</p>
@@ -1105,101 +917,6 @@
     </div>
   </div>
 
-  <!-- TOPICS / INVITE -->
-  <div class="section-full" id="sujets">
-    <div class="section-full-inner">
-      <div class="topics-layout">
-        <div>
-          <h2 class="solo">Sujets disponibles</h2>
-
-          <div class="topic-list">
-            <div class="topic reveal">
-              <div class="topic-n">01</div>
-              <div>
-                <div class="topic-title">Métriques de code : lecture et pièges</div>
-                <p class="topic-desc">Complexité cyclomatique, maintenabilité, couplage, instabilité : comment elles sont calculées et ce qu'on peut en conclure. Démonstration avec PhpMetrics et AST-Metrics.</p>
-              </div>
-            </div>
-            <div class="topic reveal">
-              <div class="topic-n">02</div>
-              <div>
-                <div class="topic-title">État des lieux de l'écosystème PHP open source</div>
-                <p class="topic-desc">Résultats de l'analyse de l'ensemble des dépôts open source PHP : fonctionnalités du langage réellement utilisées, dette, écarts entre frameworks, effet du code généré par IA.</p>
-              </div>
-            </div>
-            <div class="topic reveal">
-              <div class="topic-n">03</div>
-              <div>
-                <div class="topic-title">Moderniser une base legacy sans la réécrire</div>
-                <p class="topic-desc">Architecture hexagonale, DDD et déploiement continu introduits progressivement dans une application existante. Retour d'expérience sur deux ans.</p>
-              </div>
-            </div>
-            <div class="topic reveal">
-              <div class="topic-n">04</div>
-              <div>
-                <div class="topic-title">Plan de continuité après un incident majeur</div>
-                <p class="topic-desc">Ce que nous avons mis en place après avoir perdu la moitié de notre production : documentation, automatisation, exercices de reprise.</p>
-              </div>
-            </div>
-            <div class="topic reveal">
-              <div class="topic-n">05</div>
-              <div>
-                <div class="topic-title">PHP en ligne de commande et en binaire statique</div>
-                <p class="topic-desc">Compilation de PHP en exécutables autonomes, outils CLI distribuables, parsing de code PHP depuis Go.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="formats">
-            <div class="format"><span class="format-name">Lightning talk</span><span class="format-time">15 à 20 min</span></div>
-            <div class="format"><span class="format-name">Conférence</span><span class="format-time">40 à 50 min</span></div>
-            <div class="format"><span class="format-name">Atelier pratique</span><span class="format-time">2 h à une journée</span></div>
-            <div class="format"><span class="format-name">Table ronde, podcast</span><span class="format-time">à définir</span></div>
-          </div>
-        </div>
-
-        <div class="topics-side">
-          <div class="sb-label">Organisation</div>
-          <p>J'ai été <strong>secrétaire de l'AFUP</strong> et j'ai participé à la sélection des sujets et au <strong>mentorat de nouveaux conférenciers</strong> pour ses événements. Je connais les contraintes côté organisation : sujet cadré, supports envoyés dans les temps, durée respectée.</p>
-          <p>Je parle en français et en anglais. Les supports sont publiés après chaque session.</p>
-
-          <div class="sb-label" style="margin-top:2.5rem">Interviews AFUP</div>
-          <ul class="interviews">
-            <li><a href="https://event.afup.org/forumphp2026-interview-jean-francois-lepine/" target="_blank" rel="noopener"><span>Forum PHP 2026</span><small>236 Go de code PHP</small><span class="arr">↗</span></a></li>
-            <li><a href="https://event.afup.org/forumphp2025-interview-jean-francois-lepine/" target="_blank" rel="noopener"><span>Forum PHP 2025</span><small>PHP, sans PHP</small><span class="arr">↗</span></a></li>
-            <li><a href="https://event.afup.org/forumphp2022-interview-jean-francois-lepine/" target="_blank" rel="noopener"><span>Forum PHP 2022</span><small>Crash de production</small><span class="arr">↗</span></a></li>
-            <li><a href="https://event.afup.org/forumphp2017-interview-jean-francois-lepine/" target="_blank" rel="noopener"><span>Forum PHP 2017</span><small>Faut-il faire du travail de qualité ?</small><span class="arr">↗</span></a></li>
-          </ul>
-
-          <div class="sb-label" style="margin-top:2.5rem">Livres</div>
-          <div class="books">
-            <a href="https://www.amazon.fr/Qualit%C3%A9-logicielle-pour-d%C3%A9veloppeurs-back-end/dp/2416012673/" target="_blank" rel="noopener" class="book-link">
-              <div class="book-color" style="background:#1a73e8"></div>
-              <div>
-                <span class="book-title">Qualité logicielle pour développeurs back-end</span>
-                <span class="book-meta">Eyrolles · 2023</span>
-              </div>
-            </a>
-            <a href="https://www.eyrolles.com/Informatique/Livre/industrialisation-php-5-outils-et-bonnes-pratiques-9782212134803/" target="_blank" rel="noopener" class="book-link">
-              <div class="book-color" style="background:#bdc1c6"></div>
-              <div>
-                <span class="book-title">Industrialisation PHP 5, outils et bonnes pratiques</span>
-                <span class="book-meta">Eyrolles · 2012</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="sb-label">Ailleurs</div>
-          <ul class="interviews">
-            <li><a href="https://joind.in/user/jean-francois.lepine" target="_blank" rel="noopener"><span>joind.in</span><span class="arr">↗</span></a></li>
-            <li><a href="https://speakerdeck.com/halleck" target="_blank" rel="noopener"><span>Speaker Deck</span><span class="arr">↗</span></a></li>
-            <li><a href="https://www.youtube.com/c/afupPHP" target="_blank" rel="noopener"><span>Chaîne YouTube de l'AFUP</span><span class="arr">↗</span></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- CTA -->
   <div class="section-full" id="inviter">
     <div class="section-full-inner">
@@ -1257,6 +974,14 @@
       frame.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); playVideo(frame); }
       });
+    });
+
+    // Past events lose their "upcoming" badge automatically
+    document.querySelectorAll('.talk[data-date]').forEach(t => {
+      if (new Date(t.dataset.date) < new Date()) {
+        const k = t.querySelector('[data-upcoming]');
+        if (k) { k.textContent = 'Conférence'; k.className = 'talk-kind k-conf'; }
+      }
     });
 
     // Filters
