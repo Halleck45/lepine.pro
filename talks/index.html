@@ -1,0 +1,452 @@
+<!doctype html><html lang="fr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Conférences — Jean-François Lépine</title><meta name="description" content="Liste des conférences, ateliers et meetups donnés par Jean-François Lépine depuis 2012, avec les vidéos et les supports quand ils sont en ligne. Forum PHP, PHP Tour, AFUP Day."/><meta name="keywords" content="conférence PHP, speaker qualité logicielle, Forum PHP, AFUP, analyse statique, PhpMetrics, architecture, DDD, Jean-François Lépine"/><meta name="author" content="Jean-François Lépine"/><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/><link rel="canonical" href="https://lepine.pro/talks/"/><meta property="og:locale" content="fr_FR"/><meta property="og:type" content="website"/><meta property="og:site_name" content="Jean-François Lépine"/><meta property="og:title" content="Conférences — Jean-François Lépine"/><meta property="og:description" content="Conférences et ateliers depuis 2012 : Forum PHP, PHP Tour, AFUP Day, Blend Web Mix, RMLL. Vidéos, supports et prochaine date."/><meta property="og:url" content="https://lepine.pro/talks/"/><meta property="og:image" content="https://i.ytimg.com/vi/gqre9g4XV00/hqdefault.jpg"/><meta property="og:image:alt" content="Jean-François Lépine sur scène au Forum PHP"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Conférences — Jean-François Lépine"/><meta name="twitter:description" content="Conférences et ateliers depuis 2012. Vidéos, supports et prochaine date."/><meta name="twitter:image" content="https://i.ytimg.com/vi/gqre9g4XV00/hqdefault.jpg"/><script>window.LEPINE_GA_MEASUREMENT_ID = 'G-EY7N7NQ7QD';</script><script>(function initGoogleAnalytics() {
+      var measurementId = window.LEPINE_GA_MEASUREMENT_ID;
+      if (!measurementId || measurementId === 'G-XXXXXXXXXX') {
+        return;
+      }
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', measurementId, { anonymize_ip: true });
+      var gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+      document.head.appendChild(gaScript);
+    })();</script><script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://lepine.pro/#person",
+          "name": "Jean-François Lépine",
+          "jobTitle": "CTO, expert qualité logicielle",
+          "url": "https://lepine.pro/",
+          "sameAs": [
+            "https://joind.in/user/jean-francois.lepine",
+            "https://speakerdeck.com/halleck",
+            "https://github.com/Halleck45",
+            "https://www.linkedin.com/in/jean-fran%C3%A7ois-l%C3%A9pine-6a122726/"
+          ]
+        }
+      ]
+    }</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link rel="preconnect" href="https://i.ytimg.com"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/><style>:root {
+      --white: #ffffff;
+      --off: #f8f8f6;
+      --text: #1a1a1a;
+      --mid: #5f6368;
+      --light: #bdc1c6;
+      --line: #e8e8e6;
+      --accent: #1a73e8;
+      --accent-light: #e8f0fe;
+      --green: #137333;
+      --red: #c5221f;
+      --amber: #b06000;
+      --amber-light: #fef3e2;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 3rem;
+      height: 64px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-logo {
+      font-size: 0.92rem; font-weight: 500; letter-spacing: -0.01em;
+      color: var(--text); text-decoration: none;
+    }
+
+    .nav-links { display: flex; list-style: none; gap: 0; align-items: center; }
+
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 400; color: var(--mid);
+      text-decoration: none; padding: 0 1rem; height: 64px;
+      display: flex; align-items: center;
+      transition: color 0.15s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--text); border-bottom-color: var(--text); }
+
+    .nav-cta {
+      margin-left: 0.5rem;
+      background: var(--accent) !important;
+      color: white !important;
+      padding: 0 1.25rem !important;
+      border-radius: 100px !important;
+      height: 36px !important;
+      font-weight: 500 !important;
+      border-bottom: none !important;
+    }
+
+    .nav-cta:hover { background: #1557b0 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 130px 3rem 5rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem; font-weight: 500; color: var(--accent);
+      letter-spacing: 0.01em; margin-bottom: 2rem;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      opacity: 0; animation: up 0.5s ease 0.1s forwards;
+    }
+
+    .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 2.25rem;
+      opacity: 0; animation: up 0.65s ease 0.15s forwards;
+    }
+
+    h1 em { font-style: italic; color: var(--mid); }
+
+    .hero-desc {
+      font-size: 1.12rem; font-weight: 300; color: var(--mid);
+      max-width: 540px; line-height: 1.8; margin-bottom: 2.75rem;
+      opacity: 0; animation: up 0.65s ease 0.3s forwards;
+    }
+
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+      opacity: 0; animation: up 0.65s ease 0.45s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--text); color: white;
+      padding: 0 1.75rem; height: 48px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #2d2d2d; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border: 1px solid var(--line); color: var(--text);
+      padding: 0 1.75rem; height: 48px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 400; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--mid); background: var(--off); }
+
+    /* ── SECTIONS ── */
+    .section-full { border-bottom: 1px solid var(--line); }
+    .section-full-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 3rem; }
+
+    .eyebrow {
+      font-size: 0.78rem; font-weight: 500; color: var(--mid);
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    h2 em { font-style: italic; color: var(--mid); }
+    h2.solo { margin-bottom: 3rem; }
+
+    .section-lead {
+      font-size: 1rem; color: var(--mid); font-weight: 300;
+      max-width: 540px; line-height: 1.8; margin-bottom: 4rem;
+    }
+
+    .section-lead a { color: var(--accent); text-decoration: none; }
+    .section-lead a:hover { text-decoration: underline; }
+
+    /* ── VIDEOS ── */
+    #videos { background: var(--off); }
+
+    .video-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--line); border: 1px solid var(--line);
+    }
+
+    .video-card { background: var(--white); display: flex; flex-direction: column; transition: background 0.2s; }
+    .video-card:hover { background: var(--off); }
+    .video-card.featured { grid-column: span 2; }
+
+    .video-frame {
+      position: relative; aspect-ratio: 16 / 9; background: #111; overflow: hidden; cursor: pointer;
+    }
+
+    .video-frame img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease, opacity 0.3s;
+    }
+
+    .video-frame:hover img { transform: scale(1.03); }
+
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .play {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,255,255,0.94); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .play::after {
+      content: ''; margin-left: 4px;
+      border-style: solid; border-width: 10px 0 10px 17px;
+      border-color: transparent transparent transparent var(--text);
+    }
+
+    .video-frame:hover .play { transform: translate(-50%, -50%) scale(1.08); background: white; }
+
+    .video-dur {
+      position: absolute; right: 0.75rem; bottom: 0.75rem;
+      font-size: 0.7rem; color: white; background: rgba(0,0,0,0.7);
+      padding: 0.15rem 0.5rem; border-radius: 4px; font-variant-numeric: tabular-nums;
+    }
+
+    .video-body { padding: 1.5rem 1.75rem 1.75rem; display: flex; flex-direction: column; flex: 1; }
+    .video-event { font-size: 0.72rem; font-weight: 500; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
+
+    .video-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 0.6rem;
+    }
+
+    .video-card.featured .video-title { font-size: 1.5rem; }
+    .video-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.7; flex: 1; }
+
+    .video-links { display: flex; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    .video-links a { font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 500; }
+    .video-links a:hover { text-decoration: underline; }
+
+    /* ── TIMELINE ── */
+    .filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 3rem; }
+
+    .filter {
+      font: inherit; font-size: 0.78rem; color: var(--mid); cursor: pointer;
+      border: 1px solid var(--line); background: var(--white);
+      padding: 0.35rem 0.9rem; border-radius: 100px; transition: all 0.15s;
+    }
+
+    .filter:hover { border-color: var(--mid); color: var(--text); }
+    .filter.on { background: var(--text); color: white; border-color: var(--text); }
+
+    .year { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; }
+    .year.hidden { display: none; }
+
+    .year-n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem; letter-spacing: -0.04em; color: var(--light); line-height: 1;
+      position: sticky; top: 90px; align-self: start; padding-top: 1.6rem;
+    }
+
+    .year-list { border-top: 1px solid var(--line); }
+
+    .talk {
+      display: grid; grid-template-columns: 110px 1fr auto; gap: 1.5rem; align-items: start;
+      padding: 1.6rem 0; border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+
+    .talk.hidden { display: none; }
+    .talk-date { font-size: 0.78rem; color: var(--mid); padding-top: 0.2rem; line-height: 1.5; }
+
+    .talk-kind {
+      display: inline-block; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 0.1rem 0.5rem; border-radius: 100px; margin-bottom: 0.45rem;
+      background: var(--off); color: var(--mid); border: 1px solid var(--line);
+    }
+
+    .talk-kind.k-conf { background: var(--accent-light); color: var(--accent); border-color: transparent; }
+    .talk-kind.k-atelier { background: #e6f4ea; color: var(--green); border-color: transparent; }
+    .talk-kind.k-table { background: var(--amber-light); color: var(--amber); border-color: transparent; }
+    .talk-kind.k-upcoming { background: var(--text); color: white; border-color: transparent; }
+
+    .talk-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.12rem; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 0.3rem;
+    }
+
+    .talk-event { font-size: 0.82rem; color: var(--mid); }
+    .talk-event strong { font-weight: 500; color: var(--text); }
+    .talk-abs { font-size: 0.85rem; color: var(--mid); line-height: 1.7; margin-top: 0.6rem; max-width: 620px; }
+
+    .talk-links { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; padding-top: 0.2rem; }
+
+    .talk-links a {
+      font-size: 0.76rem; color: var(--text); text-decoration: none; white-space: nowrap;
+      border: 1px solid var(--line); padding: 0.25rem 0.7rem; border-radius: 100px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .talk-links a:hover { border-color: var(--mid); background: var(--off); }
+    .talk-links a.l-video { border-color: var(--text); }
+
+    .talk-photo { margin-top: 1rem; max-width: 420px; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+    .talk-photo img { display: block; width: 100%; height: auto; }
+
+    .empty { font-size: 0.9rem; color: var(--mid); padding: 2rem 0; display: none; }
+    .empty.show { display: block; }
+
+    /* ── QUOTES ── */
+    #retours { background: var(--off); }
+
+    .quote-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--line); border: 1px solid var(--line);
+    }
+
+    .quote { background: var(--white); padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+    .quote-mark {
+      font-family: 'DM Serif Display', serif; font-size: 3rem; line-height: 0.6;
+      color: var(--accent); opacity: 0.7;
+    }
+
+    .quote-text {
+      font-family: 'DM Serif Display', serif; font-style: italic;
+      font-size: 1.05rem; line-height: 1.5; letter-spacing: -0.01em; flex: 1;
+    }
+
+    .quote-src { font-size: 0.75rem; color: var(--mid); line-height: 1.5; }
+    .quote-src strong { font-weight: 500; color: var(--text); display: block; }
+
+    /* ── CTA ── */
+    .invite { text-align: center; max-width: 720px; margin: 0 auto; }
+    .invite h2 { margin-bottom: 1.25rem; }
+    .invite p { font-size: 1rem; color: var(--mid); font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem; }
+    .invite-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--line); }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 1.5rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .footer-copy { font-size: 0.78rem; color: var(--mid); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .hero-tag, h1, .hero-desc, .hero-actions { opacity: 1; transform: none; animation: none; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .video-grid { grid-template-columns: 1fr 1fr; }
+      .quote-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links li:not(:last-child) { display: none; }
+      .hero { padding: 100px 1.5rem 3rem; }
+      .section-full-inner { padding: 4rem 1.5rem; }
+      .video-grid { grid-template-columns: 1fr; }
+      .video-card.featured { grid-column: span 1; }
+      .year { grid-template-columns: 1fr; gap: 0.5rem; }
+      .year-n { position: static; padding-top: 0; font-size: 1.6rem; }
+      .talk { grid-template-columns: 1fr; gap: 0.6rem; }
+      .talk-links { flex-direction: row; flex-wrap: wrap; align-items: center; }
+      .quote-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
+    }</style><script defer="defer" src="../main.js?t=1788449296912"></script></head><body><nav><a href="/" class="nav-logo">Jean-François Lépine</a><ul class="nav-links"><li><a href="/#missions">Missions</a></li><li><a href="/#cto">Parcours</a></li><li><a href="/#oss">Open source</a></li><li><a href="/prestations.html">Prestations</a></li><li><a href="/talks/" class="active">Conférences</a></li><li><a href="http://blog.lepine.pro" target="_blank" rel="noopener">Blog</a></li><li><a href="/#contact" class="nav-cta">Me contacter</a></li></ul></nav><div class="hero"><div class="hero-tag"><div class="hero-tag-dot"></div>Conférences</div><h1>Conférences<br><em>et ateliers.</em></h1><p class="hero-desc">Je donne des conférences depuis 2012, principalement dans la communauté PHP francophone : <strong>Forum PHP, PHP Tour, AFUP Day</strong> et divers meetups. Les sujets tournent autour de la qualité logicielle, de l'analyse statique et de l'architecture. Cette page rassemble les vidéos et les supports encore en ligne.</p><div class="hero-actions"><a href="#videos" class="btn-primary">Vidéos</a> <a href="#toutes" class="btn-outline">Toutes les interventions</a></div></div><div class="section-full" id="videos"><div class="section-full-inner"><h2 class="solo">Vidéos</h2><div class="video-grid"><div class="video-card featured reveal"><div class="video-frame" data-yt="gqre9g4XV00" role="button" tabindex="0" aria-label="Lire la vidéo : PHP, sans PHP"><img src="https://i.ytimg.com/vi/gqre9g4XV00/hqdefault.jpg" alt="" loading="lazy"/><div class="play"></div><div class="video-dur">20 min</div></div><div class="video-body"><div class="video-event">Forum PHP 2025</div><div class="video-title">PHP, sans PHP : créez des binaires autonomes de votre code</div><p class="video-desc">Compiler un script ou une bibliothèque PHP en binaire statique, exécutable sur une machine où PHP n'est pas installé. Ce que ça permet, ce que ça ne permet pas (extensions, compatibilité), et dans quels cas c'est une alternative raisonnable à Bash, Python ou Go.</p><div class="video-links"><a href="https://drive.google.com/file/d/1nGH6fcBGrXsbqNtRK7oQaaGMAKZvU3rL/view" target="_blank" rel="noopener">Slides ↗</a> <a href="https://joind.in/event/forum-php-2025/php-sans-php--creez-des-binaires-autonomes-de-votre-code" target="_blank" rel="noopener">joind.in 5/5 ↗</a></div></div></div><div class="video-card reveal"><div class="video-frame" data-yt="IY3S4l81aB4" role="button" tabindex="0" aria-label="Lire la vidéo : Ce qu'un crash complet de notre production nous a appris"><img src="https://i.ytimg.com/vi/IY3S4l81aB4/hqdefault.jpg" alt="" loading="lazy"/><div class="play"></div><div class="video-dur">40 min</div></div><div class="video-body"><div class="video-event">Forum PHP 2022</div><div class="video-title">Ce qu'un crash complet de notre production nous a appris</div><p class="video-desc">En janvier 2020, nous avons perdu la moitié de nos serveurs, dont les clusters RabbitMQ, Redis et Elasticsearch. Trois semaines de remise en route, puis deux ans à construire un plan de continuité d'activité : documentation, automatisation, organisation.</p><div class="video-links"><a href="https://joind.in/event/forum-php-2022/ce-quun-crash-complet-de-notre-production-nous-a-appris" target="_blank" rel="noopener">joind.in 5/5 ↗</a></div></div></div><div class="video-card reveal"><div class="video-frame" data-yt="3hM0PXBzZtQ" role="button" tabindex="0" aria-label="Lire la vidéo : Du code legacy dans une stack moderne"><img src="https://i.ytimg.com/vi/3hM0PXBzZtQ/hqdefault.jpg" alt="" loading="lazy"/><div class="play"></div><div class="video-dur">40 min</div></div><div class="video-body"><div class="video-event">AFUP Day 2021 · Rennes</div><div class="video-title">Du code (legacy|moderne) dans une stack (moderne|legacy)</div><p class="video-desc">Une application de 2013, 400 000 lignes, 63 000 commits, pas de tests, déployée à la main. Comment nous y avons introduit un framework moderne, une architecture hexagonale et le déploiement continu, en deux ans.</p><div class="video-links"><a href="https://docs.google.com/presentation/d/1fYmGhd0NsRm0sxQ2TghtIAW0GZbqKWt9zX0UjFF735Q/edit" target="_blank" rel="noopener">Slides ↗</a> <a href="https://joind.in/event/afup-day-2021-lille/retex--du-code-legacymoderne-dans-une-stack-modernelegacy" target="_blank" rel="noopener">joind.in ↗</a></div></div></div><div class="video-card reveal"><div class="video-frame" data-yt="zVNj9axaUGc" role="button" tabindex="0" aria-label="Lire la vidéo : Faut-il faire du travail de qualité ?"><img src="https://i.ytimg.com/vi/zVNj9axaUGc/hqdefault.jpg" alt="" loading="lazy"/><div class="play"></div><div class="video-dur">40 min</div></div><div class="video-body"><div class="video-event">Forum PHP 2017</div><div class="video-title">Faut-il faire du travail de qualité ?</div><p class="video-desc">Bob estime un site à une semaine, sans tests ni outillage. Alice l'estime à huit semaines, avec Docker, Jenkins et PHPUnit. Le talk part de cette histoire pour discuter de ce qu'on appelle qualité et de ce qu'elle coûte.</p><div class="video-links"><a href="https://joind.in/event/forum-php-2017/faut-il-faire-du-travail-de-qualit-" target="_blank" rel="noopener">joind.in 5/5 ↗</a> <a href="https://event.afup.org/forumphp2017-interview-jean-francois-lepine/" target="_blank" rel="noopener">Interview ↗</a></div></div></div><div class="video-card reveal"><div class="video-frame" data-yt="KzFtOIRrxGo" role="button" tabindex="0" aria-label="Lire la vidéo : L'analyse statique"><img src="https://i.ytimg.com/vi/KzFtOIRrxGo/hqdefault.jpg" alt="" loading="lazy"/><div class="play"></div><div class="video-dur">40 min</div></div><div class="video-body"><div class="video-event">PHP Tour 2017 · Nantes</div><div class="video-title">L'analyse statique ? Oui oui je connais. Mais j'y comprends rien !</div><p class="video-desc">L'analyse statique coûte peu et s'installe vite, mais ses métriques sont souvent mal lues. Comment elles sont calculées, ce qu'elles indiquent sur un projet, et comment les utiliser au quotidien.</p><div class="video-links"><a href="https://joind.in/event/php-tour-2017-nantes-/lanalyse-statique--oui-oui-je-connais-mais-jy-comprends-rien-" target="_blank" rel="noopener">joind.in 5/5 ↗</a></div></div></div></div></div></div><div class="section-full" id="retours"><div class="section-full-inner"><h2 class="solo">Commentaires <em>joind.in</em></h2><div class="quote-grid"><div class="quote reveal"><div class="quote-mark">“</div><p class="quote-text">Super détaillé et très instructif.</p><div class="quote-src"><strong>Xavier Besson</strong>PHP Tour 2017 · L'analyse statique</div></div><div class="quote reveal"><div class="quote-mark">“</div><p class="quote-text">De bonnes informations sur cette aventure ! Bravo !</p><div class="quote-src"><strong>Raphaël Davaillaud</strong>AFUP Day 2021 · Du code legacy dans une stack moderne</div></div><div class="quote reveal"><div class="quote-mark">“</div><p class="quote-text">Très intéressant retour d'expérience ! C'est ma première « expérience » sur les questions de code legacy et ça m'a donné une idée assez claire des enjeux et quelques pistes pour y répondre.</p><div class="quote-src"><strong>Magali Milbergue</strong>AFUP Day 2021 · Du code legacy dans une stack moderne</div></div><div class="quote reveal"><div class="quote-mark">“</div><p class="quote-text">Super super super intéressant.</p><div class="quote-src"><strong>Jonathan Van Belle</strong>Forum PHP 2025 · PHP, sans PHP</div></div></div></div></div><div class="section-full" id="toutes"><div class="section-full-inner"><h2 class="solo">Toutes les interventions</h2><div class="filters" role="group" aria-label="Filtrer les interventions"><button class="filter on" data-filter="all">Tout</button> <button class="filter" data-filter="conf">Conférences</button> <button class="filter" data-filter="atelier">Ateliers</button> <button class="filter" data-filter="table">Tables rondes & podcasts</button> <button class="filter" data-filter="meetup">Meetups</button> <button class="filter" data-filter="video">Avec vidéo</button></div><div class="timeline"><div class="year reveal"><div class="year-n">2026</div><div class="year-list"><article class="talk" data-kind="conf" data-date="2026-10-09"><div class="talk-date">8 octobre</div><div><span class="talk-kind k-upcoming" data-upcoming>À venir</span><div class="talk-title">J'ai analysé 236 Go de code PHP : état des lieux d'un écosystème</div><div class="talk-event"><strong>Forum PHP 2026</strong> · Disneyland Paris · 40 min</div><p class="talk-abs">Méthodologie, résultats et limites de l'exercice : biais propre à l'open source, poids des très gros projets dans les moyennes.</p></div><div class="talk-links"><a href="https://event.afup.org/forum-php-2026/programme/" target="_blank" rel="noopener">Programme</a> <a href="https://event.afup.org/forumphp2026-interview-jean-francois-lepine/" target="_blank" rel="noopener">Interview</a></div></article></div></div><div class="year reveal"><div class="year-n">2025</div><div class="year-list"><article class="talk" data-kind="atelier"><div class="talk-date">9 octobre</div><div><span class="talk-kind k-atelier">Atelier</span><div class="talk-title">Scanner, comprendre, améliorer : l'analyse statique au service de la qualité PHP</div><div class="talk-event"><strong>Forum PHP 2025</strong> · Paris · 2 h, niveau intermédiaire</div><p class="talk-abs">Détection de patterns problématiques, visualisation des dépendances, priorisation du refactoring par la complexité, intégration dans la CI.</p></div><div class="talk-links"><a href="https://event.afup.org/forum-php-2025/programme/" target="_blank" rel="noopener">Programme</a></div></article><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">9 octobre</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">PHP, sans PHP : créez des binaires autonomes de votre code</div><div class="talk-event"><strong>Forum PHP 2025</strong> · Paris · 20 min</div></div><div class="talk-links"><a class="l-video" href="https://www.youtube.com/watch?v=gqre9g4XV00" target="_blank" rel="noopener">Vidéo</a> <a href="https://drive.google.com/file/d/1nGH6fcBGrXsbqNtRK7oQaaGMAKZvU3rL/view" target="_blank" rel="noopener">Slides</a> <a href="https://event.afup.org/forumphp2025-interview-jean-francois-lepine/" target="_blank" rel="noopener">Interview</a></div></article><article class="talk" data-kind="meetup"><div class="talk-date">Février</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Une enquête massive sur l'écosystème PHP</div><div class="talk-event"><strong>AFUP</strong></div><p class="talk-abs">Restitution de l'analyse de 411 000 paquets Packagist et 11 millions de fichiers PHP. 136 paquets concentrent la moitié des téléchargements, 23 % des paquets semblent abandonnés.</p></div><div class="talk-links"><a href="https://blog.lepine.pro/en/php-ecosystem-deep-dive-code-quality-landscape/" target="_blank" rel="noopener">Article</a></div></article></div></div><div class="year reveal"><div class="year-n">2023</div><div class="year-list"><article class="talk" data-kind="table"><div class="talk-date">Août</div><div><span class="talk-kind k-table">Podcast</span><div class="talk-title">Améliorer la collaboration entre testeurs et développeurs</div><div class="talk-event"><strong>Qalisty</strong> · épisode 29</div></div><div class="talk-links"><a href="https://podcasts-francais.fr/podcast/qalisty/-29-ameliorer-la-collaboration-entre-testeurs-et-d" target="_blank" rel="noopener">Écouter</a></div></article><article class="talk" data-kind="table" data-video="1"><div class="talk-date">Juin</div><div><span class="talk-kind k-table">Table ronde</span><div class="talk-title">Intelligence artificielle : opportunités et menaces</div><div class="talk-event"><strong>Station F</strong> · Tekkit</div></div><div class="talk-links"><a class="l-video" href="https://www.youtube.com/watch?v=Issu2qSQxkA" target="_blank" rel="noopener">Vidéo</a></div></article></div></div><div class="year reveal"><div class="year-n">2022</div><div class="year-list"><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">14 octobre</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Ce qu'un crash complet de notre production nous a appris</div><div class="talk-event"><strong>Forum PHP 2022</strong> · Paris · 40 min</div></div><div class="talk-links"><a class="l-video" href="https://www.youtube.com/watch?v=IY3S4l81aB4" target="_blank" rel="noopener">Vidéo</a> <a href="https://event.afup.org/forumphp2022-interview-jean-francois-lepine/" target="_blank" rel="noopener">Interview</a></div></article></div></div><div class="year reveal"><div class="year-n">2021</div><div class="year-list"><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">28 mai</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Retex : Du code (legacy|moderne) dans une stack (moderne|legacy)</div><div class="talk-event"><strong>AFUP Day 2021</strong> · Lille / Rennes, édition en ligne · 40 min</div></div><div class="talk-links"><a class="l-video" href="https://www.youtube.com/watch?v=3hM0PXBzZtQ" target="_blank" rel="noopener">Vidéo</a> <a href="https://docs.google.com/presentation/d/1fYmGhd0NsRm0sxQ2TghtIAW0GZbqKWt9zX0UjFF735Q/edit" target="_blank" rel="noopener">Slides</a></div></article></div></div><div class="year reveal"><div class="year-n">2017</div><div class="year-list"><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">27 octobre</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Faut-il faire du travail de qualité ?</div><div class="talk-event"><strong>Forum PHP 2017</strong> · Paris · 40 min</div></div><div class="talk-links"><a class="l-video" href="https://www.youtube.com/watch?v=zVNj9axaUGc" target="_blank" rel="noopener">Vidéo</a> <a href="https://event.afup.org/forumphp2017-interview-jean-francois-lepine/" target="_blank" rel="noopener">Interview</a></div></article><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">19 mai</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">L'analyse statique ? Oui oui je connais. Mais j'y comprends rien !</div><div class="talk-event"><strong>PHP Tour 2017</strong> · Nantes · 40 min</div></div><div class="talk-links"><a class="l-video" href="https://www.youtube.com/watch?v=KzFtOIRrxGo" target="_blank" rel="noopener">Vidéo</a></div></article></div></div><div class="year reveal"><div class="year-n">2014</div><div class="year-list"><article class="talk" data-kind="conf"><div class="talk-date">Novembre</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Concevoir une architecture pilotée par le métier</div><div class="talk-event"><strong>Blend Web Mix</strong> · Lyon</div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/concevoir-une-architecture-pilotee-par-le-metier" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">Juillet</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Tester une application web : quels outils et quelles pratiques ?</div><div class="talk-event"><strong>Rencontres Mondiales du Logiciel Libre</strong> · Montpellier</div></div><div class="talk-links"><a class="l-video" href="https://video.rmll.info/videos/tester-une-application-web-quels-outils-et-quelles-pratiques/" target="_blank" rel="noopener">Vidéo</a> <a href="https://speakerdeck.com/halleck/outils-et-pratiques-tester-une-application-web-moderne" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="table"><div class="talk-date">Mai</div><div><span class="talk-kind k-table">Table ronde</span><div class="talk-title">Évolution des meilleures pratiques du développement web</div><div class="talk-event"><strong>Solutions Linux</strong> · Paris</div><div class="talk-photo"><img src="/images/conferences/2014mai-solutionslinux-table-ronde.jpg" alt="Table ronde à Solutions Linux 2014" loading="lazy" width="1024" height="576"/></div></div><div class="talk-links"></div></article><article class="talk" data-kind="conf" data-video="1"><div class="talk-date">24 mars</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Quand le besoin métier pilote l'architecture applicative</div><div class="talk-event"><strong>AFUP × Radio France</strong> · Studio 105, Maison de la Radio · avec Benoît Merlet</div><p class="talk-abs">Retour d'expérience à deux voix : Scrum, DDD, BDD et DevOps face aux changements fonctionnels d'une application.</p></div><div class="talk-links"><a class="l-video" href="https://www.dailymotion.com/video/x1k91yx" target="_blank" rel="noopener">Vidéo</a> <a href="https://speakerdeck.com/halleck/quand-le-besoin-metier-pilote-larchitecture-applicative" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="meetup"><div class="talk-date">Février</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Industrialisation front-end : introduction</div><div class="talk-event"><strong>Meetup Alter Way</strong> · Paris</div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/industrialisation-front-end-introduction" target="_blank" rel="noopener">Slides</a></div></article></div></div><div class="year reveal"><div class="year-n">2013</div><div class="year-list"><article class="talk" data-kind="meetup"><div class="talk-date">Novembre</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Symfony2 : un framework orienté Domain Driven Design ?</div><div class="talk-event"><strong>Meetup Alter Way</strong> · Paris</div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/symfony2-un-framework-oriente-domain-driven-design" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="conf"><div class="talk-date">Octobre</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Développer un projet fonctionnellement complexe</div><div class="talk-event"><strong>Open World Forum</strong> · Paris</div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/developper-un-projet-fonctionnellement-complexe" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="meetup"><div class="talk-date">Juin</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Le Mutation Testing</div><div class="talk-event"><strong>Meetup Alter Way</strong> · Paris</div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/le-mutation-testing" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="conf"><div class="talk-date">Mai</div><div><span class="talk-kind k-conf">Conférence</span><div class="talk-title">Introduction au développement piloté par le comportement avec Behat</div><div class="talk-event"><strong>Solutions Linux</strong> · Paris</div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/introduction-au-developpement-pilote-par-le-comportement-avec-behat" target="_blank" rel="noopener">Slides</a></div></article></div></div><div class="year reveal"><div class="year-n">2012</div><div class="year-list"><article class="talk" data-kind="meetup"><div class="talk-date">Octobre</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Industrialiser le contrat en PHP</div><div class="talk-event"><strong>AFUP Nantes</strong></div></div><div class="talk-links"><a href="https://speakerdeck.com/halleck/industrialiser-le-contrat-en-php" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="meetup"><div class="talk-date">5 juillet</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Exploiter PHP 5</div><div class="talk-event"><strong>AFUP Orléans</strong></div></div><div class="talk-links"><a href="https://fr.slideshare.net/halleck45/exploiter-php-5" target="_blank" rel="noopener">Slides</a></div></article><article class="talk" data-kind="meetup"><div class="talk-date">Février</div><div><span class="talk-kind">Meetup</span><div class="talk-title">Programmation orientée objet et les traits en PHP 5.4</div><div class="talk-event"><strong>AFUP Orléans</strong></div></div><div class="talk-links"><a href="https://fr.slideshare.net/halleck45/programmation-oriente-objet-et-les-traits-en-php-54" target="_blank" rel="noopener">Slides</a></div></article></div></div></div><p class="empty" id="empty">Aucune intervention ne correspond à ce filtre.</p></div></div><div class="section-full" id="inviter"><div class="section-full-inner"><div class="invite reveal"><h2>Me proposer un créneau</h2><p>Conférence, meetup, séminaire interne ou atelier : indiquez-moi le contexte, le public et la durée.</p><div class="invite-actions"><a href="/#contact" class="btn-primary">Me contacter</a> <a href="/prestations.html" class="btn-outline">Formations et ateliers</a></div></div></div></div><footer><div class="footer-inner"><span class="footer-copy">© 2026 Jean-François Lépine</span><div class="footer-links"><a href="https://github.com/Halleck45">GitHub</a> <a href="http://blog.lepine.pro">Blog</a> <a href="https://ast-metrics.dev">AST-Metrics</a></div></div></footer><script>// Reveal on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Click-to-play YouTube (no third-party request before interaction)
+    function playVideo(frame) {
+      if (frame.dataset.loaded) return;
+      const id = frame.dataset.yt;
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = frame.getAttribute('aria-label') || 'Vidéo';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+      frame.dataset.loaded = '1';
+      frame.style.cursor = 'default';
+    }
+    document.querySelectorAll('.video-frame').forEach(frame => {
+      frame.addEventListener('click', () => playVideo(frame));
+      frame.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); playVideo(frame); }
+      });
+    });
+
+    // Past events lose their "upcoming" badge automatically
+    document.querySelectorAll('.talk[data-date]').forEach(t => {
+      if (new Date(t.dataset.date) < new Date()) {
+        const k = t.querySelector('[data-upcoming]');
+        if (k) { k.textContent = 'Conférence'; k.className = 'talk-kind k-conf'; }
+      }
+    });
+
+    // Filters
+    const filters = document.querySelectorAll('.filter');
+    const talks = document.querySelectorAll('.talk');
+    const years = document.querySelectorAll('.year');
+    const empty = document.getElementById('empty');
+    filters.forEach(btn => btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const f = btn.dataset.filter;
+      let visible = 0;
+      talks.forEach(t => {
+        const ok = f === 'all' || (f === 'video' ? t.dataset.video === '1' : t.dataset.kind === f);
+        t.classList.toggle('hidden', !ok);
+        if (ok) visible++;
+      });
+      years.forEach(y => {
+        const any = y.querySelector('.talk:not(.hidden)');
+        y.classList.toggle('hidden', !any);
+      });
+      empty.classList.toggle('show', visible === 0);
+    }));</script></body></html>
